@@ -7,7 +7,7 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "TechCorp - Web & App Development Solutions",
+  title: "MrBitX - Web & App Development Solutions",
   description:
     "Professional web development, mobile apps, AI solutions, and digital marketing services to grow your business.",
   generator: "v0.app",

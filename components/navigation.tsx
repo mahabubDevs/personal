@@ -26,7 +26,7 @@ export function Navigation() {
             <div className="h-8 w-8 rounded bg-primary flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-lg">T</span>
             </div>
-            <span className="font-bold text-xl text-primary">TechCorp</span>
+            <span className="font-bold text-xl text-primary">MrBitX</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -45,7 +45,7 @@ export function Navigation() {
           {/* Contact Buttons */}
           <div className="hidden md:flex items-center space-x-2">
             <Button variant="outline" size="sm" asChild>
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/01346810082" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="h-4 w-4 mr-2" />
                 WhatsApp
               </a>
