@@ -72,7 +72,7 @@ export function HeroSection() {
           {/* Contact Action Buttons */}
           <div className="flex flex-wrap gap-3 justify-center">
             <Button variant="outline" size="sm" asChild>
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/+8801346810082" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="h-4 w-4 mr-2" />
                 WhatsApp
               </a>
@@ -90,7 +90,7 @@ export function HeroSection() {
               </a>
             </Button>
             <Button variant="outline" size="sm" asChild>
-              <a href="tel:+1234567890">
+              <a href="tel:+8801346810082">
                 <Phone className="h-4 w-4 mr-2" />
                 Call Now
               </a>

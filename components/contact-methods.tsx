@@ -9,7 +9,7 @@ export function ContactMethods() {
       title: "WhatsApp",
       description: "Get instant responses",
       action: "Chat Now",
-      href: "https://wa.me/1234567890",
+      href: "https://wa.me/+8801346810082",
       color: "text-green-600",
     },
     {
@@ -33,7 +33,7 @@ export function ContactMethods() {
       title: "Phone Call",
       description: "Speak directly with us",
       action: "Call Now",
-      href: "tel:+1234567890",
+      href: "tel:+8801346810082",
       color: "text-primary",
     },
   ]
