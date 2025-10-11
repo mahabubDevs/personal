@@ -43,7 +43,7 @@ export function Footer() {
   ]
 
   return (
-    <footer className="bg-secondary/30 border-t">
+    <footer className="bg-[#4B0082] border-t">
       <div className="container mx-auto px-4">
         {/* Main Footer Content */}
         <div className="py-16">
