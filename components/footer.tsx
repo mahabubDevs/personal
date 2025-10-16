@@ -13,6 +13,7 @@ import {
   MapPin,
   ArrowRight,
 } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 
 export function Footer() {
@@ -43,7 +44,7 @@ export function Footer() {
   ]
 
   return (
-    <footer className="bg-[#4B0082] border-t">
+    <footer className="bg-[#ffffff] border-t">
       <div className="container mx-auto px-4">
         {/* Main Footer Content */}
         <div className="py-16">
@@ -52,13 +53,20 @@ export function Footer() {
             <div className="lg:col-span-1">
               <Link href="/" className="flex items-center space-x-2 mb-6">
                 <div className="h-8 w-8 rounded bg-primary flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-lg">T</span>
+                  {/* <span className="text-primary-foreground font-bold text-lg">T</span> */}
+                  <Image
+                    src="/logo.png"
+                    alt="MrBitX Logo"
+                    width={150}
+                    height={150}
+                    className="object-contain"
+                  />
                 </div>
-                <span className="font-bold text-xl text-primary">TechCorp</span>
+                <span className="font-bold text-xl text-primary">MrBitX</span>
               </Link>
               <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
-                We deliver cutting-edge web development, mobile apps, AI solutions, and digital marketing services to
-                help your business thrive in the digital world.
+                MrBitX
+                We build powerful Full Stack web and Flutter app solutions — helping businesses grow with Simple Solutions and Real Results.
               </p>
               <div className="flex space-x-3">
                 <Button variant="ghost" size="sm" asChild>
@@ -212,7 +220,7 @@ export function Footer() {
         <div className="py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm">
-              © {currentYear} TechCorp. All rights reserved. Built with passion and cutting-edge technology.
+              © {currentYear} MrBitX. Simple Solutions, Real Results.
             </p>
             <div className="flex items-center gap-6">
               <Link href="/privacy" className="text-muted-foreground hover:text-primary transition-colors text-sm">

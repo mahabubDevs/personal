@@ -49,11 +49,10 @@ export function HeroSection() {
         {/* Hero Content */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-balance mb-6">
-            Grow your business with <span className="text-primary">Web & App</span> solutions
+            Simple <span className="text-primary">Solutions</span>, Real Results. 
           </h1>
           <p className="text-xl text-muted-foreground text-balance mb-8 max-w-3xl mx-auto">
-            We deliver cutting-edge web development, mobile apps, AI solutions, and digital marketing services to help
-            your business thrive in the digital world.
+            We build high-performance Full Stack websites and Flutter mobile apps that deliver real growth for your business.
           </p>
 
           {/* CTA Buttons */}

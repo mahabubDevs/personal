@@ -4,6 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X, MessageCircle } from "lucide-react"
+import Image from "next/image"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -24,7 +25,13 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="h-8 w-8 rounded bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">T</span>
+              <Image
+                                  src="/logo.png"
+                                  alt="MrBitX Logo"
+                                  width={200}
+                                  height={200}
+                                  className="object-contain"
+                                />
             </div>
             <span className="font-bold text-xl text-primary">MrBitX</span>
           </Link>

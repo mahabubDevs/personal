@@ -14,11 +14,11 @@ export default function AboutPage() {
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-balance mb-6">
-            About <span className="text-primary">TechCorp</span>
+            About <span className="text-primary">MrBitX</span>
           </h1>
           <p className="text-xl text-muted-foreground text-balance mb-8 max-w-3xl mx-auto">
-            We are a passionate team of developers, designers, and innovators dedicated to transforming businesses
-            through cutting-edge technology solutions.
+            At MrBitX, we create Simple Solutions that deliver Real Results.
+Our team of passionate developers, designers, and innovators is dedicated to helping businesses grow with modern Full Stack web and Flutter app solutions.
           </p>
         </div>
       </section>

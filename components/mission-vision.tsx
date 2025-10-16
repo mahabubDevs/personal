@@ -7,7 +7,7 @@ export function MissionVision() {
       icon: Target,
       title: "Mission",
       description:
-        "To empower businesses with cutting-edge technology solutions that drive growth, efficiency, and innovation in the digital age.",
+        "To empower businesses with simple yet powerful Full Stack and Flutter solutions that drive real growth, efficiency, and innovation — Simple Solutions, Real Results.",
     },
     {
       icon: Eye,

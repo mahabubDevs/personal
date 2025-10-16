@@ -39,9 +39,9 @@ export function WhyChooseUs() {
     <section className="py-20 px-4 bg-secondary/30">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose TechCorp?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose MrBitX?</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We combine technical expertise with business understanding to deliver solutions that drive real results.
+            At MrBitX, we combine deep technical expertise with real-world business understanding to deliver Simple Solutions, Real Results — ensuring every project achieves measurable success.
           </p>
         </div>
 
