@@ -94,7 +94,7 @@ export function ContactForm() {
                 value={formData.email}
                 onChange={(e) => handleInputChange("email", e.target.value)}
                 required
-                placeholder="john@example.com"
+                placeholder="info@mrbitx.com"
               />
             </div>
           </div>
@@ -107,7 +107,7 @@ export function ContactForm() {
                 type="tel"
                 value={formData.phone}
                 onChange={(e) => handleInputChange("phone", e.target.value)}
-                placeholder="+1 (555) 123-4567"
+                placeholder="+880 1346 810082"
               />
             </div>
             <div className="space-y-2">
@@ -118,12 +118,10 @@ export function ContactForm() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="web-development">Web Development</SelectItem>
-                  <SelectItem value="app-development">App Development</SelectItem>
+                  <SelectItem value="app-development">Flutter App Development</SelectItem>
                   <SelectItem value="ai-solutions">AI Solutions</SelectItem>
                   <SelectItem value="game-development">Game Development</SelectItem>
                   <SelectItem value="digital-marketing">Digital Marketing</SelectItem>
-                  <SelectItem value="consultation">Consultation</SelectItem>
-                  <SelectItem value="other">Other</SelectItem>
                 </SelectContent>
               </Select>
             </div>

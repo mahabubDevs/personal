@@ -7,10 +7,13 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "MrBitX - Web & App Development Solutions",
+  title: "MrBitX - Web & App Development Company | Simple Solutions. Real Results.",
   description:
-    "Professional web development, mobile apps, AI solutions, and digital marketing services to grow your business.",
+    "MrBitX is a professional web development and mobile app company. We build high-performance Full Stack websites and Flutter apps that drive real business growth — Simple Solutions. Real Results.",
   generator: "v0.app",
+  icons: {
+    icon: "/favicon.ico", // ✅ add this line
+  },
 }
 
 export default function RootLayout({

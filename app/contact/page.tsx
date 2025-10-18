@@ -13,7 +13,8 @@ export default function ContactPage() {
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-balance mb-6">
-            Let's Build Something <span className="text-primary">Amazing</span>
+            Get your Full Stack website or Flutter app built with MrBitX — Simple Solutions, Real Results.
+
           </h1>
           <p className="text-xl text-muted-foreground text-balance mb-8 max-w-3xl mx-auto">
             Ready to transform your ideas into reality? Get in touch with our team and let's discuss how we can help
@@ -51,7 +52,7 @@ export default function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="TechCorp Office Location"
+              title="MrBitX Office Location"
             />
           </div>
         </div>

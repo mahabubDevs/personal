@@ -5,44 +5,39 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export function FAQSection() {
   const faqs = [
     {
-      question: "How long does a typical project take?",
+      question: "What technologies does MrBitX specialize in?",
       answer:
-        "Project timelines vary depending on complexity and scope. A simple website typically takes 2-4 weeks, while complex web applications or mobile apps can take 2-6 months. We provide detailed timelines during our initial consultation.",
+        "At MrBitX, we specialize in modern Full Stack web development and cross-platform Flutter app development. Our web stack includes React, Next.js, Node.js, Express, MongoDB, PostgreSQL, TypeScript, and Tailwind CSS. For mobile apps, we leverage Flutter, Dart, Firebase, and React Native to build high-performance, scalable applications for iOS and Android.",
+    },
+    {
+      question: "How can MrBitX help my business with Full Stack web development?",
+      answer:
+        "MrBitX delivers end-to-end Full Stack solutions, from responsive front-end design to robust back-end infrastructure. We focus on creating web applications that are fast, secure, and scalable. Our expertise in MERN stack and modern web frameworks ensures your business gets a feature-rich and maintainable website that drives growth and engagement.",
+    },
+    {
+      question: "Can MrBitX develop a cross-platform Flutter app for my project?",
+      answer:
+        "Yes! Our team builds high-quality Flutter apps that run seamlessly on both iOS and Android. We ensure your app is visually appealing, fast, and fully functional. From UI/UX design to backend integration with Firebase or custom APIs, MrBitX provides complete Flutter solutions to meet your business needs.",
     },
     {
       question: "Do you provide ongoing support and maintenance?",
       answer:
-        "Yes, we offer comprehensive support and maintenance packages. This includes regular updates, security patches, performance monitoring, and technical support. We have different tiers available based on your needs.",
+        "Absolutely! MrBitX offers 24/7 technical support and maintenance for all web and mobile applications. We ensure your project stays up-to-date, secure, and optimized for performance, so your business can run smoothly without interruptions.",
     },
     {
-      question: "What technologies do you specialize in?",
+      question: "How long does a typical project take?",
       answer:
-        "We specialize in modern web technologies including React, Next.js, Node.js, and MongoDB for web development. For mobile apps, we use Flutter. We also work with AI/ML technologies like Python, TensorFlow, and various cloud platforms.",
+        "Project timelines depend on complexity and requirements. Typically, a Full Stack web application takes 4–12 weeks, and a Flutter mobile app takes 6–14 weeks. MrBitX provides a detailed project plan with milestones to ensure timely delivery without compromising quality.",
     },
     {
       question: "Can you work with our existing team?",
       answer:
-        "We're experienced in collaborating with in-house teams and can integrate seamlessly into your existing workflow. We can work as an extension of your team or lead specific project components.",
-    },
-    {
-      question: "Do you offer fixed-price or hourly billing?",
-      answer:
-        "We offer both options depending on the project type. For well-defined projects, we prefer fixed-price contracts. For ongoing development or projects with evolving requirements, hourly billing might be more suitable. We'll discuss the best approach during consultation.",
-    },
-    {
-      question: "What's included in your web development service?",
-      answer:
-        "Our web development service includes UI/UX design, frontend and backend development, database setup, API integration, testing, deployment, and basic SEO optimization. We also provide training and documentation for your team.",
+        "Yes, MrBitX collaborates seamlessly with your internal team. We adapt to your development workflow, communicate effectively, and provide expert guidance to complement your in-house capabilities.",
     },
     {
       question: "Do you sign NDAs and confidentiality agreements?",
       answer:
-        "Yes, we take confidentiality very seriously. We're happy to sign NDAs and confidentiality agreements before discussing your project details. Your intellectual property and business information are always protected.",
-    },
-    {
-      question: "Can you help with digital marketing for our new application?",
-      answer:
-        "Yes, we offer comprehensive digital marketing services including SEO, social media marketing, content strategy, and paid advertising. We can help you launch and promote your application effectively.",
+        "Yes, we prioritize your privacy and intellectual property. MrBitX signs NDAs and confidentiality agreements to ensure your project details remain secure at all times.",
     },
   ]
 
