@@ -50,7 +50,7 @@ export function TechStack() {
           {technologies.map((tech, index) => (
             <Card key={index} className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <tech.icon className="h-12 w-12 text-primary mb-4" />
+                <tech.icon className="h-12 w-12 text-[#8A2BE2] mb-4" />
                 <CardTitle className="text-xl">{tech.title}</CardTitle>
                 <p className="text-muted-foreground">{tech.description}</p>
               </CardHeader>

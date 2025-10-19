@@ -44,7 +44,7 @@ export function MissionVision() {
           {values.map((value, index) => (
             <Card key={index} className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <value.icon className="h-12 w-12 text-primary mx-auto mb-4" />
+                <value.icon className="h-12 w-12 text-[#8A2BE2] mx-auto mb-4" />
                 <CardTitle className="text-xl">{value.title}</CardTitle>
               </CardHeader>
               <CardContent>

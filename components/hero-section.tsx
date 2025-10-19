@@ -102,7 +102,7 @@ export function HeroSection() {
           {services.map((service, index) => (
             <Card key={index} className="hover:shadow-lg transition-shadow">
               <CardContent className="p-6 text-center">
-                <service.icon className="h-12 w-12 text-primary mx-auto mb-4" />
+                <service.icon className="h-12 w-12 text-[#8A2BE2] mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">{service.title}</h3>
                 <p className="text-sm text-muted-foreground">{service.description}</p>
               </CardContent>
