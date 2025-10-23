@@ -47,6 +47,36 @@ const getBlogPost = (slug: string) => {
       readTime: "5 min read",
       tags: ["Web Development", "Trends", "AI", "PWA"],
     },
+    {
+  slug: "nextjs-api-routes-tutorial",
+  title: "Next.js API Routes Tutorial",
+  excerpt:
+    "Learn to build APIs directly inside your Next.js projects using built-in API routes.",
+  content: `
+    <h2>Introduction</h2>
+    <p>Next.js allows developers to build full-stack applications easily using its integrated API routes feature.</p>
+
+    <h2>Setting Up</h2>
+    <pre><code>mkdir my-app && cd my-app
+npx create-next-app@latest .</code></pre>
+
+    <h2>Creating API Route</h2>
+    <p>Create a file at <code>/pages/api/hello.ts</code> and add the following:</p>
+    <pre><code>export default function handler(req, res) {
+      res.status(200).json({ message: "Hello World" })
+    }</code></pre>
+
+    <h2>Conclusion</h2>
+    <p>With API routes, you can build and deploy both frontend and backend together in a single Next.js application.</p>
+  `,
+  image: "/placeholder.svg?text=Next.js+API+Tutorial",
+  category: "Tutorials",
+  author: "Emily Davis",
+  publishedAt: "2025-02-14",
+  readTime: "8 min read",
+  tags: ["Next.js", "API", "Backend"],
+    }
+
     // Add more posts here...
   ]
 
