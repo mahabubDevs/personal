@@ -13,7 +13,7 @@ export default function ContactPage() {
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-balance mb-6">
-            Get your Full Stack website or Flutter app built with MrBitX — Simple Solutions, Real Results.
+            Get your Full Stack website or Flutter app <br></br> built with MrBitX 
 
           </h1>
           <p className="text-xl text-muted-foreground text-balance mb-8 max-w-3xl mx-auto">

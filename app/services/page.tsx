@@ -67,7 +67,7 @@ export default function ServicesPage() {
             {services.map((service, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <service.icon className="h-12 w-12 text-primary mb-4" />
+                  <service.icon className="h-12 w-12 text-[#8A2BE2] mb-4" />
                   <CardTitle className="text-2xl">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>

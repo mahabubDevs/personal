@@ -15,7 +15,7 @@ export function ServiceHero({ title, description, icon: Icon, backgroundImage }:
         </div>
       )}
       <div className="container mx-auto text-center relative z-10">
-        <Icon className="h-16 w-16 text-primary mx-auto mb-6" />
+        <Icon className="h-16 w-16 text-[#8A2BE2] mx-auto mb-6" />
         <h1 className="text-4xl md:text-6xl font-bold text-balance mb-6">{title}</h1>
         <p className="text-xl text-muted-foreground text-balance max-w-3xl mx-auto">{description}</p>
       </div>
