@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://mrbitx.com
-
-# Sitemaps
-Sitemap: https://mrbitx.com/sitemap.xml

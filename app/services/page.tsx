@@ -1,98 +1,116 @@
-import { Navigation } from "@/components/navigation"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Code, Smartphone, Gamepad2, Brain, TrendingUp, ArrowRight } from "lucide-react"
-import { Footer } from "@/components/footer"
+"use client"
+
+import { Code2, Smartphone, Gamepad2, Brain, Zap } from "lucide-react"
 import Link from "next/link"
 
-export default function ServicesPage() {
+export default function Services() {
   const services = [
     {
-      icon: Code,
+      icon: Code2,
       title: "Web Development",
-      description: "Full-stack MERN applications with modern UI/UX design and robust backend architecture.",
-      features: ["Responsive Design", "API Integration", "Database Management", "Performance Optimization"],
-      href: "/services/web-development",
+      slug: "web",
+      description:
+        "Modern, scalable web applications built with cutting-edge technologies. From responsive designs to complex backend systems.",
+      features: ["React/Next.js", "Full-Stack Development", "Progressive Web Apps", "E-Commerce Solutions"],
     },
     {
       icon: Smartphone,
       title: "App Development",
-      description: "Cross-platform mobile applications using Flutter for iOS and Android platforms.",
-      features: ["Cross-Platform", "Native Performance", "Push Notifications", "Offline Support"],
-      href: "/services/app-development",
+      slug: "app",
+      description:
+        "Native and cross-platform mobile applications that deliver exceptional user experiences across iOS and Android.",
+      features: ["React Native", "Flutter", "Native Development", "App Optimization"],
     },
     {
       icon: Gamepad2,
       title: "Game Development",
-      description: "Engaging games for multiple platforms using Unity and Unreal Engine.",
-      features: ["2D/3D Games", "Multi-Platform", "Monetization", "Analytics Integration"],
-      href: "/services/game-development",
+      slug: "game",
+      description:
+        "Engaging games and interactive experiences built with industry-standard engines and development practices.",
+      features: ["Unity Development", "Unreal Engine", "Mobile Games", "VR/AR Experiences"],
     },
     {
       icon: Brain,
       title: "AI Solutions",
-      description: "Intelligent automation and machine learning solutions for business optimization.",
-      features: ["Machine Learning", "Natural Language Processing", "Computer Vision", "Predictive Analytics"],
-      href: "/services/ai-solutions",
+      slug: "ai",
+      description:
+        "Intelligent systems that leverage machine learning and artificial intelligence to solve complex business problems.",
+      features: ["Machine Learning Models", "NLP Solutions", "Computer Vision", "AI Integration"],
     },
     {
-      icon: TrendingUp,
+      icon: Zap,
       title: "Digital Marketing",
-      description: "Data-driven marketing strategies to boost your online presence and conversions.",
-      features: ["SEO Optimization", "Social Media Marketing", "Content Strategy", "Analytics & Reporting"],
-      href: "/services/digital-marketing",
+      slug: "marketing",
+      description:
+        "Strategic digital marketing services to boost your online presence and drive measurable business growth.",
+      features: ["SEO Optimization", "Content Marketing", "Social Media Strategy", "Analytics & Reporting"],
     },
   ]
 
   return (
-    <main className="min-h-screen">
-      <Navigation />
-
-      {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-balance mb-6">
-            Our <span className="text-primary">Services</span>
+    <main className="min-h-screen pt-24 pb-12">
+      <div className="max-w-6xl mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            Our Services
           </h1>
-          <p className="text-xl text-muted-foreground text-balance mb-8 max-w-3xl mx-auto">
-            We offer comprehensive technology solutions to help your business grow and succeed in the digital landscape.
+          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
+            Comprehensive digital solutions tailored to elevate your business and drive innovation.
           </p>
         </div>
-      </section>
 
-      {/* Services Grid */}
-      <section className="py-20 px-4 bg-secondary/30">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <service.icon className="h-12 w-12 text-[#8A2BE2] mb-4" />
-                  <CardTitle className="text-2xl">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-6">{service.description}</p>
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm">
-                        <div className="h-2 w-2 rounded-full bg-primary mr-3"></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button asChild className="w-full">
-                    <Link href={service.href}>
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          {services.map((service, idx) => {
+            const Icon = service.icon
+            return (
+              <Link href={`/services/${service.slug}`} key={idx}>
+                <div className="p-8 rounded-lg bg-card/50 border border-border neon-border hover:neon-border-blue transition-all group hover:shadow-[0_0_40px_rgba(0,191,255,0.2)] cursor-pointer h-full">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="p-3 rounded-lg bg-gradient-to-br from-primary to-secondary group-hover:scale-110 transition-transform">
+                      <Icon className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-foreground group-hover:text-secondary transition-colors">
+                        {service.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  <p className="text-foreground/80 mb-6">{service.description}</p>
+
+                  <div className="space-y-2">
+                    <p className="text-sm font-semibold text-secondary">Key Features:</p>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {service.features.map((feature, i) => (
+                        <li key={i} className="text-sm text-foreground/70 flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </Link>
+            )
+          })}
         </div>
-      </section>
-      <Footer />
+
+        {/* CTA Section */}
+        <div className="bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg p-12 border border-border text-center">
+          <h2 className="text-3xl font-bold mb-4 text-foreground">Ready to Start Your Project?</h2>
+          <p className="text-foreground/80 mb-8 max-w-2xl mx-auto">
+            Let's discuss how our services can transform your business and help you achieve your digital goals.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block px-8 py-4 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full font-semibold hover:shadow-[0_0_40px_rgba(138,43,226,0.7)] transition-all"
+          >
+            Get in Touch
+          </Link>
+        </div>
+      </div>
     </main>
   )
 }

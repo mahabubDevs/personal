@@ -1,65 +1,179 @@
-import { Navigation } from "@/components/navigation"
-import { ContactForm } from "@/components/contact-form"
-import { ContactMethods } from "@/components/contact-methods"
-import { FAQSection } from "@/components/faq-section"
-import { Footer } from "@/components/footer"
+"use client"
 
-export default function ContactPage() {
+import type React from "react"
+
+import { MapPin, Mail, Phone, ArrowRight } from "lucide-react"
+import { useState } from "react"
+
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    setSubmitted(true)
+    setTimeout(() => {
+      setFormData({ name: "", email: "", subject: "", message: "" })
+      setSubmitted(false)
+    }, 3000)
+  }
+
   return (
-    <main className="min-h-screen">
-      <Navigation />
-
-      {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-balance mb-6">
-            Get your Full Stack website or Flutter app <br></br> built with MrBitX 
-
+    <main className="min-h-screen pt-24 pb-12">
+      <div className="max-w-6xl mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            Get in Touch
           </h1>
-          <p className="text-xl text-muted-foreground text-balance mb-8 max-w-3xl mx-auto">
-            Ready to transform your ideas into reality? Get in touch with our team and let's discuss how we can help
-            your business grow.
+          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
+            Have a project in mind? We'd love to hear from you. Let's discuss how we can help.
           </p>
         </div>
-      </section>
 
-      {/* Contact Section */}
-      <section className="py-20 px-4 bg-secondary/30">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <ContactForm />
-            <ContactMethods />
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {/* Contact Info */}
+          <div className="md:col-span-1">
+            <div className="space-y-6">
+              {/* Address */}
+              <div className="p-6 rounded-lg bg-card/50 border border-border hover:border-secondary transition-all">
+                <div className="flex gap-4 mb-3">
+                  <MapPin className="text-secondary flex-shrink-0" size={24} />
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">Address</h3>
+                    <p className="text-foreground/70 text-sm">
+                      123 Tech Street
+                      <br />
+                      San Francisco, CA 94105
+                      <br />
+                      United States
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="p-6 rounded-lg bg-card/50 border border-border hover:border-secondary transition-all">
+                <div className="flex gap-4 mb-3">
+                  <Mail className="text-secondary flex-shrink-0" size={24} />
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">Email</h3>
+                    <p className="text-foreground/70 text-sm">hello@mrbitx.com</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Phone */}
+              <div className="p-6 rounded-lg bg-card/50 border border-border hover:border-secondary transition-all">
+                <div className="flex gap-4 mb-3">
+                  <Phone className="text-secondary flex-shrink-0" size={24} />
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">Phone</h3>
+                    <p className="text-foreground/70 text-sm">+1 (555) 123-4567</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="md:col-span-2">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-6 p-8 rounded-lg bg-card/50 border border-border neon-border"
+            >
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-2">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:border-secondary focus:ring-2 focus:ring-secondary/50 text-foreground outline-none transition-colors"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-2">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:border-secondary focus:ring-2 focus:ring-secondary/50 text-foreground outline-none transition-colors"
+                    placeholder="your@email.com"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">Subject</label>
+                <select
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:border-secondary focus:ring-2 focus:ring-secondary/50 text-foreground outline-none transition-colors"
+                >
+                  <option value="">Select a subject</option>
+                  <option value="web">Web Development</option>
+                  <option value="app">App Development</option>
+                  <option value="game">Game Development</option>
+                  <option value="ai">AI Solutions</option>
+                  <option value="marketing">Digital Marketing</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">Message</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={6}
+                  className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:border-secondary focus:ring-2 focus:ring-secondary/50 text-foreground outline-none transition-colors resize-none"
+                  placeholder="Tell us about your project..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full px-6 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full font-semibold hover:shadow-[0_0_40px_rgba(138,43,226,0.7)] transition-all flex items-center justify-center gap-2"
+              >
+                {submitted ? "✓ Message Sent!" : "Send Message"}
+                {!submitted && <ArrowRight size={18} />}
+              </button>
+            </form>
           </div>
         </div>
-      </section>
 
-      {/* Map Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Visit Our Office</h2>
-            <p className="text-lg text-muted-foreground">
-              Located in the heart of San Francisco's tech district, we're always happy to meet in person.
-            </p>
-          </div>
-
-          <div className="aspect-video rounded-lg overflow-hidden bg-muted">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0197327470443!2d-122.39492668468177!3d37.78808797975647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085807c3c3c3c3c%3A0x3c3c3c3c3c3c3c3c!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1234567890123"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="MrBitX Office Location"
-            />
+        {/* Map Section */}
+        <div className="rounded-lg overflow-hidden border border-border h-80 bg-card/50">
+          <div className="w-full h-full bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
+            <div className="text-center">
+              <MapPin size={48} className="text-secondary mx-auto mb-4" />
+              <p className="text-foreground/70">Interactive map would be displayed here</p>
+            </div>
           </div>
         </div>
-      </section>
-
-      <FAQSection />
-      <Footer />
+      </div>
     </main>
   )
 }
