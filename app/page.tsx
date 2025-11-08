@@ -2,6 +2,10 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Hero3D } from "@/components/3d-hero"
+import Portfolio from "./portfolio/page"
+import Blog from "./blog/page"
+import About from "./about/page"
+import Services from "./services/page"
 
 export default function Home() {
   return (
@@ -63,7 +67,7 @@ export default function Home() {
       </section>
 
       {/* Featured Services Preview */}
-      <section className="relative py-20 px-4 bg-gradient-to-b from-background via-card/30 to-background">
+      {/* <section className="relative py-20 px-4 bg-gradient-to-b from-background via-card/30 to-background">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16 text-foreground">Our Core Services</h2>
 
@@ -95,7 +99,14 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
+
+
+
+        {/* <Services /> */}
+       {/* <Portfolio /> */}
+      {/* <Blog /> */}
+      {/* <About /> */}
     </main>
   )
 }
