@@ -40,7 +40,7 @@ export default function HomeBlogSection() {
     {
       id: 4,
       title: "Intro to Machine Learning for Developers",
-      excerpt: "A beginner-friendly introduction to machine learning concepts and practical implementation.",
+      excerpt: "A beginner-friendly introduction to machine learning concepts and practical implementation",
       author: "Sarah Johnson",
       date: "Nov 1, 2024",
       readTime: "10 min",
