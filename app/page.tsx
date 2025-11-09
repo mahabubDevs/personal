@@ -6,6 +6,11 @@ import Portfolio from "./portfolio/page"
 import Blog from "./blog/page"
 import About from "./about/page"
 import Services from "./services/page"
+import HomeBlogSection from "@/components/HomeBlogComponent"
+import HomeServicesSection from "@/components/HomeServiceComponent"
+import HomePortfolioSection from "@/components/HomePortfolioComponent"
+import HomeAboutPreview from "@/components/HomeAboutCompoent"
+import HomePortfolioPreview from "@/components/HomePortfolioComponent"
 
 export default function Home() {
   return (
@@ -102,8 +107,10 @@ export default function Home() {
       </section> */}
 
 
-
-        {/* <Services /> */}
+        <HomeServicesSection />
+        <HomePortfolioPreview />
+        <HomeBlogSection />
+        <HomeAboutPreview />
        {/* <Portfolio /> */}
       {/* <Blog /> */}
       {/* <About /> */}
