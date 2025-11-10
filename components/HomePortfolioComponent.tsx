@@ -28,22 +28,19 @@ export default function HomePortfolioPreview() {
       technologies: ["Python", "TensorFlow", "React"],
       image: "/ai-content-generator.png",
     },
-    {
-      title: "Analytics Dashboard",
-      category: "Web Development",
-      description: "Real-time analytics dashboard for tracking business metrics and generating insights.",
-      technologies: ["React", "D3.js", "Node.js", "MongoDB"],
-      image: "/analytics-dashboard.png",
-    },
   ]
 
-  // show only first 3 projects
-  const previewProjects = projects.slice(0, 3)
-
   return (
-    <section className="py-20 bg-background border-t border-border">
+    <section className="relative py-20 overflow-hidden">
+      {/* 🔵 Animated Blobs Background */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-blob"></div>
+        <div className="absolute top-1/2 right-1/3 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-1/4 left-1/2 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
+      </div>
+
+      {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4">
-        {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             Featured Projects
@@ -54,18 +51,16 @@ export default function HomePortfolioPreview() {
         </div>
 
         {/* Project Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {previewProjects.map((project, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+          {projects.map((project, idx) => (
             <div
               key={idx}
-              className="group rounded-lg overflow-hidden bg-card/50 border border-border hover:border-secondary transition-all hover:shadow-[0_0_40px_rgba(0,191,255,0.2)]"
+              className="group rounded-lg overflow-hidden bg-card/60 border border-border hover:border-secondary transition-all hover:shadow-[0_0_40px_rgba(0,191,255,0.2)] backdrop-blur-sm"
             >
-              {/* Image Placeholder */}
               <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden">
                 <div className="w-full h-full bg-muted/20 group-hover:scale-110 transition-transform duration-300"></div>
               </div>
 
-              {/* Info */}
               <div className="p-6">
                 <div className="mb-3">
                   <span className="text-xs font-semibold text-secondary bg-secondary/10 px-3 py-1 rounded-full">
@@ -100,7 +95,7 @@ export default function HomePortfolioPreview() {
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 relative z-10">
           <Link
             href="/portfolio"
             className="inline-block px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-full shadow-lg hover:opacity-90 transition-all"

@@ -1,5 +1,3 @@
-// components/HomeBlogSection.tsx
-
 "use client"
 
 import Link from "next/link"
@@ -40,7 +38,7 @@ export default function HomeBlogSection() {
     {
       id: 4,
       title: "Intro to Machine Learning for Developers",
-      excerpt: "A beginner-friendly introduction to machine learning concepts and practical implementation",
+      excerpt: "A beginner-friendly introduction to machine learning concepts and practical implementation.",
       author: "Sarah Johnson",
       date: "Nov 1, 2024",
       readTime: "10 min",
@@ -50,8 +48,16 @@ export default function HomeBlogSection() {
   ]
 
   return (
-    <section className="py-16 bg-background">
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="relative py-20 overflow-hidden">
+      {/* 🌈 Animated Background Blobs */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-blob"></div>
+        <div className="absolute top-1/2 right-1/3 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-1/4 left-1/2 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
+        {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             Latest Blog Posts
@@ -59,11 +65,12 @@ export default function HomeBlogSection() {
           <p className="text-foreground/80 text-lg">Stay updated with our latest insights and tutorials.</p>
         </div>
 
+        {/* Blog Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {articles.slice(0, 4).map((article) => (
             <article
               key={article.id}
-              className="group rounded-lg overflow-hidden bg-card/50 border border-border hover:border-secondary transition-all hover:shadow-[0_0_40px_rgba(0,191,255,0.2)]"
+              className="group rounded-lg overflow-hidden bg-card/60 border border-border hover:border-secondary transition-all hover:shadow-[0_0_40px_rgba(0,191,255,0.2)] backdrop-blur-sm"
             >
               <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 overflow-hidden relative">
                 <div className="w-full h-full bg-muted/20 group-hover:scale-110 transition-transform duration-300"></div>
@@ -73,10 +80,13 @@ export default function HomeBlogSection() {
                 <span className="text-xs font-semibold text-secondary bg-secondary/10 px-3 py-1 rounded-full mb-3 inline-block">
                   {article.category}
                 </span>
+
                 <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-secondary transition-colors line-clamp-2">
                   {article.title}
                 </h3>
+
                 <p className="text-foreground/70 text-sm mb-4 line-clamp-2">{article.excerpt}</p>
+
                 <div className="flex items-center gap-4 text-xs text-muted-foreground mb-4 border-t border-border pt-4">
                   <div className="flex items-center gap-1">
                     <User size={14} />
@@ -90,6 +100,7 @@ export default function HomeBlogSection() {
                   <span>•</span>
                   <span>{article.date}</span>
                 </div>
+
                 <Link
                   href={`/blog/${article.id}`}
                   className="inline-flex items-center gap-2 text-secondary hover:text-accent font-semibold transition-colors"
@@ -101,7 +112,8 @@ export default function HomeBlogSection() {
           ))}
         </div>
 
-        <div className="text-center">
+        {/* View All Button */}
+        <div className="text-center mt-12">
           <Link
             href="/blog"
             className="inline-block px-8 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full font-semibold hover:shadow-[0_0_40px_rgba(138,43,226,0.7)] transition-all"
