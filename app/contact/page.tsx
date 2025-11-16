@@ -54,11 +54,11 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Address</h3>
                     <p className="text-foreground/70 text-sm">
-                      123 Tech Street
+                      Keari Plaza, Rd 8/A, 
                       <br />
-                      San Francisco, CA 94105
+                      Dhaka 1205
                       <br />
-                      United States
+                      Bangladesh
                     </p>
                   </div>
                 </div>
@@ -70,7 +70,7 @@ export default function Contact() {
                   <Mail className="text-secondary flex-shrink-0" size={24} />
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                    <p className="text-foreground/70 text-sm">hello@mrbitx.com</p>
+                    <p className="text-foreground/70 text-sm">info@mrbitx.com</p>
                   </div>
                 </div>
               </div>
@@ -81,7 +81,7 @@ export default function Contact() {
                   <Phone className="text-secondary flex-shrink-0" size={24} />
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                    <p className="text-foreground/70 text-sm">+1 (555) 123-4567</p>
+                    <p className="text-foreground/70 text-sm">+880 1346 810082</p>
                   </div>
                 </div>
               </div>

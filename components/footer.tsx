@@ -66,7 +66,7 @@ export function Footer() {
                 href="mailto:hello@mrbitx.com"
                 className="flex items-center gap-2 text-sm text-foreground/60 hover:text-secondary transition-colors"
               >
-                <Mail size={16} /> hello@mrbitx.com
+                <Mail size={16} /> info@mrbitx.com
               </a>
               <a
                 href="tel:+1234567890"

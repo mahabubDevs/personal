@@ -34,7 +34,7 @@ export default function Home() {
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <div className="mb-8 inline-block">
             <div className="px-4 py-2 rounded-full border border-secondary/50 text-secondary text-sm font-medium">
-              ✨ Welcome to the Future of Digital Innovation
+               Welcome to the Future of Digital Innovation
             </div>
           </div>
 
