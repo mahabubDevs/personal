@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
-
+import Image from "next/image";
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -21,12 +21,18 @@ export function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border neon-border-blue">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link
-          href="/"
-          className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hover:scale-110 transition-transform"
-        >
-          MrBitX
-        </Link>
+        <Link href="/" className="flex items-center">
+  <Image
+    src="/logo.png"
+    alt="MrBitX Logo"
+    width={40}
+    height={40}
+    priority
+  />
+  <span className="ml-2 text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+    MrBitX
+  </span>
+</Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
