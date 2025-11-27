@@ -91,7 +91,7 @@ export function Footer() {
 
         {/* Divider */}
         <div className="border-t border-border pt-8">
-          <p className="text-center text-sm text-foreground/40">© 2025 MrBitX. All Right Reserved.</p>
+          <p className="text-center text-sm text-foreground/40">© 2025 MrBitX. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
