@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { ExternalLink, Github } from "lucide-react"
-
+import Image from "next/image"
 export default function Portfolio() {
   const projects = [
     {
@@ -97,8 +97,13 @@ export default function Portfolio() {
               className="group rounded-lg overflow-hidden bg-card/50 border border-border hover:border-secondary transition-all hover:shadow-[0_0_40px_rgba(0,191,255,0.2)]"
             >
               {/* Project Image */}
-              <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 overflow-hidden relative">
-                <div className="w-full h-full bg-muted/20 group-hover:scale-110 transition-transform duration-300"></div>
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
 
               {/* Project Info */}
@@ -123,14 +128,14 @@ export default function Portfolio() {
                   ))}
                 </div>
 
-                <div className="flex gap-3">
+                {/* <div className="flex gap-3">
                   <button className="flex-1 px-4 py-2 bg-primary/20 hover:bg-primary/30 text-secondary rounded font-medium transition-colors flex items-center justify-center gap-2">
                     <ExternalLink size={16} /> View
                   </button>
                   <button className="flex-1 px-4 py-2 border border-border hover:border-secondary rounded font-medium transition-colors flex items-center justify-center gap-2">
                     <Github size={16} /> Code
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}

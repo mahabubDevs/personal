@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { Clock, User, ArrowLeft, ArrowRight, Share2 } from "lucide-react"
 import { useParams } from "next/navigation"
+import Image from "next/image"
 
 const blogArticles: Record<
   string,
@@ -245,9 +246,17 @@ export default function BlogArticle() {
             </button>
           </div>
 
-          <div className="h-96 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg overflow-hidden mb-12 border border-border">
+          {/* <div className="h-96 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg overflow-hidden mb-12 border border-border">
             <div className="w-full h-full bg-muted/20"></div>
-          </div>
+          </div> */}
+
+          <Image
+            src={article.image}
+            alt={article.title}
+            width={1280}
+            height={720}
+            className="w-full h-96 object-cover rounded-lg overflow-hidden mb-12 border border-border"
+          />
 
           {/* Article Content */}
           <div className="prose prose-invert max-w-none mb-12 text-foreground/90 leading-relaxed">
