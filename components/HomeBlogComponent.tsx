@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Clock, User, ArrowRight } from "lucide-react"
-
+import Image from "next/image"
 export default function HomeBlogSection() {
   const articles = [
     {
@@ -72,8 +72,13 @@ export default function HomeBlogSection() {
               key={article.id}
               className="group rounded-lg overflow-hidden bg-card/60 border border-border hover:border-secondary transition-all hover:shadow-[0_0_40px_rgba(0,191,255,0.2)] backdrop-blur-sm"
             >
-              <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 overflow-hidden relative">
-                <div className="w-full h-full bg-muted/20 group-hover:scale-110 transition-transform duration-300"></div>
+                 <div className="h-48 relative overflow-hidden">
+                <Image
+                  src={article.image}
+                  alt={article.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
 
               <div className="p-6">
