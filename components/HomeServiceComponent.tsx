@@ -29,6 +29,14 @@ export default function HomeServicesSection() {
         "Intelligent systems that leverage machine learning and artificial intelligence to solve complex business problems.",
       features: ["Machine Learning Models", "NLP Solutions", "Computer Vision", "AI Integration"],
     },
+    {
+      icon: Gamepad2,
+      title: "Game Development",
+      slug: "game",
+      description:
+        "Engaging games and interactive experiences for multiple platforms. From mobile games to immersive 3D experiences.",
+      features: ["Unity", "Unreal Engine", "Mobile Game Development", "3D Game Development"],
+    },
   ]
 
   return (
