@@ -24,6 +24,7 @@ const jobListings: Record<
     benefits: string[]
   }
 > = {
+  // … এখানে আপনার jobListings ডাটা রাখবেন …
   "1": {
     id: 1,
     title: "Senior Full-Stack Developer",
@@ -246,17 +247,54 @@ export default function JobDetail() {
   const params = useParams()
   const router = useRouter()
   const id = params?.id as string
-  const job = jobListings[id] || jobListings["1"]
+
+  // ✅ Safe fallback
+  const job = jobListings[id ?? "1"] ?? jobListings["1"]
 
   const [showApplicationForm, setShowApplicationForm] = useState(false)
-  const [formData, setFormData] = useState({ name: "", email: "", resume: "" })
+  const [formData, setFormData] = useState<{
+    name: string
+    email: string
+    resume: string
+    file: File | null
+  }>({ name: "", email: "", resume: "", file: null })
+  const [submitting, setSubmitting] = useState(false)
 
-  const handleApply = (e: React.FormEvent) => {
+  // ✅ Form submission with file size check
+  const handleApply = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    alert("Application submitted! We will contact you soon.")
-    setShowApplicationForm(false)
-    setFormData({ name: "", email: "", resume: "" })
+
+    if (formData.file && formData.file.size > 2 * 1024 * 1024) {
+      alert("File size cannot exceed 2MB")
+      return
+    }
+
+    const data = new FormData()
+    data.append("name", formData.name)
+    data.append("email", formData.email)
+    data.append("resume", formData.resume)
+    if (formData.file) data.append("file", formData.file)
+
+    try {
+      setSubmitting(true)
+      const res = await fetch("/api/apply", {
+        method: "POST",
+        body: data,
+      })
+      const result = await res.json()
+      if (res.ok) {
+        alert("Application submitted successfully!")
+        setFormData({ name: "", email: "", resume: "", file: null })
+        setShowApplicationForm(false)
+      } else {
+        alert(result.error || "Failed to submit application")
+      }
+    } catch (err) {
+      console.error(err)
+      alert("Something went wrong")
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const jobIds = Object.keys(jobListings)
@@ -279,31 +317,31 @@ export default function JobDetail() {
 
         {/* Job Header */}
         <div className="mb-12">
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">{job.title}</h1>
-          <p className="text-xl text-foreground/80 mb-6">{job.fullDescription}</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">{job?.title}</h1>
+          <p className="text-xl text-foreground/80 mb-6">{job?.fullDescription}</p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 p-6 rounded-lg bg-card/50 border border-border">
             <div>
               <p className="text-xs text-muted-foreground mb-1">Department</p>
-              <p className="font-semibold text-foreground">{job.department}</p>
+              <p className="font-semibold text-foreground">{job?.department}</p>
             </div>
             <div>
               <p className="text-xs text-muted-foreground mb-1 flex items-center gap-1">
                 <MapPin size={12} /> Location
               </p>
-              <p className="font-semibold text-foreground">{job.location}</p>
+              <p className="font-semibold text-foreground">{job?.location}</p>
             </div>
             <div>
               <p className="text-xs text-muted-foreground mb-1 flex items-center gap-1">
                 <Clock size={12} /> Type
               </p>
-              <p className="font-semibold text-foreground">{job.type}</p>
+              <p className="font-semibold text-foreground">{job?.type}</p>
             </div>
             <div>
               <p className="text-xs text-muted-foreground mb-1 flex items-center gap-1">
                 <DollarSign size={12} /> Salary
               </p>
-              <p className="font-semibold text-secondary">{job.salary}</p>
+              <p className="font-semibold text-secondary">{job?.salary}</p>
             </div>
           </div>
 
@@ -315,10 +353,12 @@ export default function JobDetail() {
           </button>
         </div>
 
-        {showApplicationForm && (
+        {/* Application Form */}
+        {showApplicationForm && job && (
           <div className="mb-12 p-8 rounded-lg bg-card border border-border">
             <h2 className="text-2xl font-bold text-foreground mb-6">Apply for {job.title}</h2>
-            <form onSubmit={handleApply} className="space-y-4">
+            <form onSubmit={handleApply} className="space-y-4" encType="multipart/form-data">
+              {/* Name */}
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">Full Name</label>
                 <input
@@ -330,6 +370,8 @@ export default function JobDetail() {
                   placeholder="Your name"
                 />
               </div>
+
+              {/* Email */}
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">Email</label>
                 <input
@@ -341,6 +383,8 @@ export default function JobDetail() {
                   placeholder="your@email.com"
                 />
               </div>
+
+              {/* Resume Text */}
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">Resume / Cover Letter</label>
                 <textarea
@@ -351,12 +395,32 @@ export default function JobDetail() {
                   placeholder="Tell us about yourself..."
                 />
               </div>
+
+              {/* File Upload Highlight */}
+              <div className="border-2 border-dashed border-secondary p-4 rounded-lg bg-secondary/10">
+                <label className="block text-sm font-medium text-foreground mb-2 font-semibold">
+                  Upload Resume / Cover Letter (PDF, DOC, DOCX) - Max 2MB
+                </label>
+                <input
+                  type="file"
+                  required
+                  accept=".pdf,.doc,.docx"
+                  onChange={(e) => setFormData({ ...formData, file: e.target.files?.[0] || null })}
+                  className="w-full text-sm cursor-pointer"
+                />
+                {formData.file && (
+                  <p className="text-xs text-foreground/70 mt-1">Selected file: {formData.file.name}</p>
+                )}
+              </div>
+
+              {/* Buttons */}
               <div className="flex gap-4">
                 <button
                   type="submit"
-                  className="px-6 py-2 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full font-medium hover:shadow-[0_0_30px_rgba(138,43,226,0.5)] transition-all"
+                  disabled={submitting}
+                  className="px-6 py-2 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full font-medium hover:shadow-[0_0_30px_rgba(138,43,226,0.5)] transition-all disabled:opacity-50"
                 >
-                  Submit Application
+                  {submitting ? "Submitting..." : "Submit Application"}
                 </button>
                 <button
                   type="button"
@@ -370,14 +434,13 @@ export default function JobDetail() {
           </div>
         )}
 
-        {/* Job Details Sections */}
+        {/* Job Details */}
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div className="md:col-span-2">
-            {/* Responsibilities */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-6">Responsibilities</h2>
               <ul className="space-y-3">
-                {job.responsibilities.map((resp, idx) => (
+                {job?.responsibilities.map((resp, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <span className="w-2 h-2 rounded-full bg-secondary flex-shrink-0 mt-2"></span>
                     <span className="text-foreground/80">{resp}</span>
@@ -386,11 +449,10 @@ export default function JobDetail() {
               </ul>
             </div>
 
-            {/* Qualifications */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-6">Qualifications</h2>
               <ul className="space-y-3">
-                {job.qualifications.map((qual, idx) => (
+                {job?.qualifications.map((qual, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <span className="w-2 h-2 rounded-full bg-accent flex-shrink-0 mt-2"></span>
                     <span className="text-foreground/80">{qual}</span>
@@ -400,14 +462,12 @@ export default function JobDetail() {
             </div>
           </div>
 
-          {/* Sidebar - Skills and Benefits */}
           <div>
             <div className="sticky top-24 space-y-6">
-              {/* Required Skills */}
               <div className="p-6 rounded-lg bg-card/50 border border-border">
                 <h3 className="text-lg font-bold text-foreground mb-4">Required Skills</h3>
                 <div className="space-y-2">
-                  {job.skills.map((skill, idx) => (
+                  {job?.skills.map((skill, idx) => (
                     <div key={idx} className="px-3 py-2 rounded bg-primary/20 text-secondary text-sm">
                       {skill}
                     </div>
@@ -415,11 +475,10 @@ export default function JobDetail() {
                 </div>
               </div>
 
-              {/* Key Benefits Preview */}
               <div className="p-6 rounded-lg bg-gradient-to-br from-primary/10 to-secondary/10 border border-border">
                 <h3 className="text-lg font-bold text-foreground mb-4">Key Benefits</h3>
                 <ul className="space-y-2">
-                  {job.benefits.slice(0, 4).map((benefit, idx) => (
+                  {job?.benefits.slice(0, 4).map((benefit, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-sm text-foreground/80">
                       <span className="text-accent">•</span>
                       {benefit}
