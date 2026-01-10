@@ -71,40 +71,7 @@ export default function Home() {
         <Hero3D />
       </section>
 
-      {/* Featured Services Preview */}
-      {/* <section className="relative py-20 px-4 bg-gradient-to-b from-background via-card/30 to-background">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 text-foreground">Our Core Services</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { title: "Web Development", description: "Modern, scalable web applications" },
-              { title: "App Development", description: "Native and cross-platform solutions" },
-              { title: "AI Solutions", description: "Intelligent systems and automation" },
-            ].map((service, idx) => (
-              <div
-                key={idx}
-                className="p-6 rounded-lg bg-card/50 border border-border neon-border hover:neon-border-blue transition-all hover:shadow-[0_0_30px_rgba(0,191,255,0.3)] group cursor-pointer"
-              >
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-primary to-secondary mb-4 group-hover:scale-110 transition-transform"></div>
-                <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-secondary transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-foreground/60">{service.description}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 text-secondary hover:text-accent font-semibold"
-            >
-              View All Services <ArrowRight size={20} />
-            </Link>
-          </div>
-        </div>
-      </section> */}
+     
 
 
         <HomeServicesSection />

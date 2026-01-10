@@ -176,126 +176,119 @@ export default function ServiceDetail() {
   const prevSlug = currentIndex > 0 ? allSlugs[currentIndex - 1] : null
   const nextSlug = currentIndex < allSlugs.length - 1 ? allSlugs[currentIndex + 1] : null
 
-  return (
-    <main className="min-h-screen pt-24 pb-12">
-      <div className="max-w-4xl mx-auto px-4">
-        {/* Back Link */}
-        <Link
-          href="/services"
-          className="flex items-center gap-2 text-secondary hover:text-accent mb-8 transition-colors"
-        >
-          <ArrowLeft size={20} /> Back to Services
-        </Link>
+ return (
+  <main className="min-h-screen pt-20 md:pt-24 pb-10 md:pb-12">
+    <div className="max-w-4xl mx-auto px-4">
+      
+      {/* Back Link */}
+      <Link
+        href="/services"
+        className="flex items-center gap-2 text-secondary hover:text-accent mb-6 md:mb-8 transition-colors"
+      >
+        <ArrowLeft size={18} /> Back to Services
+      </Link>
 
-        {/* Hero Section */}
-        <div className="mb-12">
-          <div className="flex items-start gap-6 mb-6">
-            <div className="p-4 rounded-lg bg-gradient-to-br from-primary to-secondary">
-              <Icon className="w-10 h-10 text-primary-foreground" />
-            </div>
-            <div>
-              <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">{service.title}</h1>
-              <p className="text-xl text-foreground/80">{service.longDescription}</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Features Section */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div>
-            <h2 className="text-3xl font-bold text-foreground mb-6">Key Features</h2>
-            <ul className="space-y-3">
-              {service.features.map((feature, idx) => (
-                <li key={idx} className="flex items-center gap-3">
-                  <CheckCircle2 className="text-secondary flex-shrink-0" size={20} />
-                  <span className="text-foreground/80">{feature}</span>
-                </li>
-              ))}
-            </ul>
+      {/* Hero Section */}
+      <div className="mb-10 md:mb-12">
+        <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6">
+          
+          <div className="p-3 md:p-4 rounded-lg bg-gradient-to-br from-primary to-secondary">
+            <Icon className="w-8 h-8 md:w-10 md:h-10 text-primary-foreground" />
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold text-foreground mb-6">Benefits</h2>
-            <ul className="space-y-3">
-              {service.benefits.map((benefit, idx) => (
-                <li key={idx} className="flex items-center gap-3">
-                  <CheckCircle2 className="text-accent flex-shrink-0" size={20} />
-                  <span className="text-foreground/80">{benefit}</span>
-                </li>
-              ))}
-            </ul>
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-foreground mb-3 md:mb-4">
+              {service.title}
+            </h1>
+            <p className="text-base md:text-xl text-foreground/80">
+              {service.longDescription}
+            </p>
           </div>
-        </div>
-
-        {/* Technologies Section */}
-        <div className="p-8 rounded-lg bg-card/50 border border-border mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-6">Technologies We Use</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-            {service.technologies.map((tech, idx) => (
-              <div
-                key={idx}
-                className="px-4 py-2 rounded-lg bg-card border border-border text-center hover:border-secondary transition-colors"
-              >
-                <span className="text-sm font-medium text-foreground">{tech}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Case Studies Section */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-6">Success Stories</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {service.caseStudies.map((study, idx) => (
-              <div
-                key={idx}
-                className="p-6 rounded-lg bg-gradient-to-br from-primary/10 to-secondary/10 border border-border"
-              >
-                <h3 className="text-xl font-semibold text-foreground mb-2">{study.title}</h3>
-                <p className="text-secondary font-semibold">{study.result}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg p-8 border border-border text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-foreground">Ready to Get Started?</h2>
-          <p className="text-foreground/80 mb-6">
-            Let's discuss how {service.title.toLowerCase()} can transform your business.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full font-semibold hover:shadow-[0_0_40px_rgba(138,43,226,0.7)] transition-all"
-          >
-            Schedule a Consultation
-          </Link>
-        </div>
-
-        {/* Navigation */}
-        <div className="flex justify-between items-center pt-8 border-t border-border">
-          {prevSlug ? (
-            <Link
-              href={`/services/${prevSlug}`}
-              className="flex items-center gap-2 text-secondary hover:text-accent transition-colors"
-            >
-              <ArrowLeft size={20} /> Previous Service
-            </Link>
-          ) : (
-            <div />
-          )}
-          {nextSlug ? (
-            <Link
-              href={`/services/${nextSlug}`}
-              className="flex items-center gap-2 text-secondary hover:text-accent transition-colors"
-            >
-              Next Service <ArrowRight size={20} />
-            </Link>
-          ) : (
-            <div />
-          )}
         </div>
       </div>
-    </main>
-  )
+
+      {/* Features + Benefits */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-12">
+        <div>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Key Features</h2>
+          <ul className="space-y-3">
+            {service.features.map((feature, idx) => (
+              <li key={idx} className="flex gap-3">
+                <CheckCircle2 size={18} className="text-secondary mt-1" />
+                <span className="text-sm md:text-base text-foreground/80">
+                  {feature}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Benefits</h2>
+          <ul className="space-y-3">
+            {service.benefits.map((benefit, idx) => (
+              <li key={idx} className="flex gap-3">
+                <CheckCircle2 size={18} className="text-accent mt-1" />
+                <span className="text-sm md:text-base text-foreground/80">
+                  {benefit}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Technologies */}
+      <div className="p-5 md:p-8 rounded-lg bg-card/50 border mb-10 md:mb-12">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">
+          Technologies We Use
+        </h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+          {service.technologies.map((tech, idx) => (
+            <div
+              key={idx}
+              className="px-3 py-2 rounded-lg bg-card border text-center text-sm"
+            >
+              {tech}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="rounded-lg p-6 md:p-8 text-center bg-gradient-to-r from-primary/20 to-secondary/20 border mb-12">
+        <h2 className="text-2xl md:text-3xl font-bold mb-3">
+          Ready to Get Started?
+        </h2>
+        <p className="text-sm md:text-base mb-5 text-foreground/80">
+          Let's discuss how {service.title.toLowerCase()} can transform your business.
+        </p>
+
+        <Link
+          href="/contact"
+          className="block md:inline-block w-full md:w-auto px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold bg-gradient-to-r from-primary to-accent text-primary-foreground"
+        >
+          Schedule a Consultation
+        </Link>
+      </div>
+
+      {/* Navigation */}
+      <div className="flex flex-col sm:flex-row justify-between gap-4 pt-6 border-t">
+        {prevSlug ? (
+          <Link href={`/services/${prevSlug}`} className="flex gap-2 text-secondary">
+            <ArrowLeft size={18} /> Previous Service
+          </Link>
+        ) : <div />}
+
+        {nextSlug ? (
+          <Link href={`/services/${nextSlug}`} className="flex gap-2 text-secondary">
+            Next Service <ArrowRight size={18} />
+          </Link>
+        ) : <div />}
+      </div>
+
+    </div>
+  </main>
+)
+
 }

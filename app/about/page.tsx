@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image"
 
 export default function About() {
   const timelineEvents = [
@@ -35,6 +36,35 @@ export default function About() {
       description: "Launching revolutionary 3D web technologies and AI-powered development tools for the future.",
     },
   ]
+
+
+  const team = [
+  {
+    name: "Md Mahabub Rahman",
+    role: "CEO & Founder",
+    specialty: "Full-Stack Development",
+    image: "/team/mahabub.jpg",
+  },
+  {
+    name: "Sarah Johnson",
+    role: "CTO",
+    specialty: "Cloud Architecture",
+    image: "/team/sarah.jpg",
+  },
+  {
+    name: "Marcus Rodriguez",
+    role: "Lead Designer",
+    specialty: "UI/UX Design",
+    image: "/team/marcus.jpg",
+  },
+  {
+    name: "Elena Petrov",
+    role: "AI Lead",
+    specialty: "Machine Learning",
+    image: "/team/elena.jpg",
+  },
+]
+
 
   return (
     <main className="min-h-screen pt-24 pb-12">
@@ -111,27 +141,39 @@ export default function About() {
         </div>
 
         {/* Team Section */}
-        <div className="mb-16">
-          <h2 className="text-4xl font-bold mb-12 text-center text-foreground">Meet Our Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { name: "Alex Chen", role: "CEO & Founder", specialty: "Full-Stack Development" },
-              { name: "Sarah Johnson", role: "CTO", specialty: "Cloud Architecture" },
-              { name: "Marcus Rodriguez", role: "Lead Designer", specialty: "UI/UX Design" },
-              { name: "Elena Petrov", role: "AI Lead", specialty: "Machine Learning" },
-            ].map((member, idx) => (
-              <div
-                key={idx}
-                className="p-6 rounded-lg bg-gradient-to-br from-card to-card/50 border border-border hover:border-secondary transition-all group"
-              >
-                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary to-secondary mb-4 group-hover:scale-110 transition-transform"></div>
-                <h3 className="text-lg font-semibold text-foreground mb-1">{member.name}</h3>
-                <p className="text-secondary font-medium text-sm mb-2">{member.role}</p>
-                <p className="text-foreground/60 text-sm">{member.specialty}</p>
-              </div>
-            ))}
+          <div className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
+              Meet Our Team
+            </h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {team.map((member, idx) => (
+                <div
+                  key={idx}
+                  className="p-6 rounded-lg bg-gradient-to-br from-card to-card/50 border border-border hover:border-secondary transition-all group text-center"
+                >
+                  {/* Image */}
+                  <div className="relative w-20 h-20 mx-auto mb-4">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="rounded-full object-cover group-hover:scale-110 transition-transform"
+                    />
+                  </div>
+
+                  <h3 className="text-lg font-semibold mb-1">{member.name}</h3>
+                  <p className="text-secondary font-medium text-sm mb-2">
+                    {member.role}
+                  </p>
+                  <p className="text-foreground/60 text-sm">
+                    {member.specialty}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+
 
         {/* Values */}
         <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg p-12 border border-border mb-16">
