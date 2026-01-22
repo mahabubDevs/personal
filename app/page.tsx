@@ -31,23 +31,31 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
+        <div className="relative z-10 text-center max-w-[1100px] mx-auto px-4">
           <div className="mb-8 inline-block">
             <div className="px-4 py-2 rounded-full border border-secondary/50 text-secondary text-sm font-medium">
-               Welcome to the Future of Digital Innovation
+               Trusted Software Development Partner for US & UK Businesses
             </div>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-float">
-            Building the Future
+            <span className="block">
+              Custom Software Development
+            </span>
+            <span className="block mt-2">
+              & 
+            </span>
+            <span className="block">
+              AI Solutions
+            </span>
+
+            
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-            with Smart Digital Solutions
-          </p>
 
-          <p className="text-lg text-foreground/80 mb-8 max-w-2xl mx-auto">
-            Cutting-edge software development, AI solutions, and digital transformation services for modern businesses.
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto">
+           Secure, scalable, and high-performance digital products for modern businesses.
+
           </p>
 
           {/* CTA Buttons */}

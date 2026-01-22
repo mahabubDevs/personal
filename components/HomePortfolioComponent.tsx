@@ -3,20 +3,22 @@
 import Link from "next/link"
 import { ExternalLink, Github } from "lucide-react"
 import Image from "next/image"
+
 export default function HomePortfolioPreview() {
   const projects = [
     {
       title: "E-Commerce Platform",
       category: "Web Development",
       description:
-        "Full-featured e-commerce platform with real-time inventory management and AI-powered recommendations.",
+        "AI-powered e-commerce platform with real-time inventory, secure checkout, and scalable architecture for online businesses.",
       technologies: ["Next.js", "TypeScript", "PostgreSQL", "Stripe"],
       image: "/e-commerce-platform.png",
     },
     {
       title: "Mobile Fitness App",
       category: "App Development",
-      description: "Cross-platform fitness tracking app with social features and personalized workout plans.",
+      description:
+        "Cross-platform fitness app with personalized workouts, social engagement, and performance tracking for iOS and Android users.",
       technologies: ["React Native", "Firebase", "Machine Learning"],
       image: "/mobile-fitness-app.jpg",
     },
@@ -24,7 +26,7 @@ export default function HomePortfolioPreview() {
       title: "AI Content Generator",
       category: "AI Solutions",
       description:
-        "Intelligent content generator using advanced NLP for blog posts, social media, and marketing copy.",
+        "Intelligent content generator using NLP and machine learning to create SEO-friendly blog posts, marketing copy, and social media content.",
       technologies: ["Python", "TensorFlow", "React"],
       image: "/ai-content-generator.png",
     },
@@ -39,18 +41,16 @@ export default function HomePortfolioPreview() {
         <div className="absolute bottom-1/4 left-1/2 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
       </div>
 
-      {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             Featured Projects
           </h2>
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            A glimpse of the innovative solutions we've built for our clients.
+            Explore our innovative software solutions built for web, mobile, and AI-driven applications.
           </p>
         </div>
 
-        {/* Project Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
           {projects.map((project, idx) => (
             <div
@@ -60,9 +60,10 @@ export default function HomePortfolioPreview() {
               <div className="h-48 relative overflow-hidden">
                 <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} screenshot`}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
+                  priority={idx === 0}
                 />
               </div>
 
@@ -80,26 +81,34 @@ export default function HomePortfolioPreview() {
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech, i) => (
-                    <span key={i} className="text-xs px-2 py-1 bg-muted/40 text-muted-foreground rounded">
+                    <span
+                      key={i}
+                      className="text-xs px-2 py-1 bg-muted/40 text-muted-foreground rounded"
+                    >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex gap-3">
-                  <button className="flex-1 px-4 py-2 bg-primary/20 hover:bg-primary/30 text-secondary rounded font-medium transition-colors flex items-center justify-center gap-2">
-                    <ExternalLink size={16} /> View
-                  </button>
-                  <button className="flex-1 px-4 py-2 border border-border hover:border-secondary rounded font-medium transition-colors flex items-center justify-center gap-2">
-                    <Github size={16} /> Code
-                  </button>
-                </div>
+                {/* <div className="flex gap-3">
+                  <Link
+                    href={`/projects/${project.title.toLowerCase().replace(/\s+/g, "-")}`}
+                    className="flex-1 px-4 py-2 bg-primary/20 hover:bg-primary/30 text-secondary rounded font-medium transition-colors flex items-center justify-center gap-2"
+                  >
+                    <ExternalLink size={16} /> View Project Details
+                  </Link>
+                  <Link
+                    href="#"
+                    className="flex-1 px-4 py-2 border border-border hover:border-secondary rounded font-medium transition-colors flex items-center justify-center gap-2"
+                  >
+                    <Github size={16} /> View Source Code
+                  </Link>
+                </div> */}
               </div>
             </div>
           ))}
         </div>
 
-        {/* View All Button */}
         <div className="text-center mt-12 relative z-10">
           <Link
             href="/portfolio"

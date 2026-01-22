@@ -5,39 +5,60 @@ import Link from "next/link"
 
 export default function HomeServicesSection() {
   const services = [
-    {
-      icon: Code2,
-      title: "Web Development",
-      slug: "web",
-      description:
-        "Modern, scalable web applications built with cutting-edge technologies. From responsive designs to complex backend systems.",
-      features: ["React/Next.js", "Full-Stack Development", "Progressive Web Apps", "E-Commerce Solutions"],
-    },
-    {
-      icon: Smartphone,
-      title: "App Development",
-      slug: "app",
-      description:
-        "Native and cross-platform mobile applications that deliver exceptional user experiences across iOS and Android.",
-      features: ["React Native", "Flutter", "Native Development", "App Optimization"],
-    },
-    {
-      icon: Brain,
-      title: "AI Solutions",
-      slug: "ai",
-      description:
-        "Intelligent systems that leverage machine learning and artificial intelligence to solve complex business problems.",
-      features: ["Machine Learning Models", "NLP Solutions", "Computer Vision", "AI Integration"],
-    },
-    {
-      icon: Gamepad2,
-      title: "Game Development",
-      slug: "game",
-      description:
-        "Engaging games and interactive experiences for multiple platforms. From mobile games to immersive 3D experiences.",
-      features: ["Unity", "Unreal Engine", "Mobile Game Development", "3D Game Development"],
-    },
-  ]
+  {
+    icon: Code2,
+    title: "Web Development",
+    slug: "web",
+    description:
+      "Secure, scalable, high-performance web applications for startups and enterprises. From modern UI to robust backend systems.",
+    features: [
+      "React & Next.js",
+      "Backend & API Development",
+      "Scalable Architecture",
+      "E-Commerce Solutions",
+    ],
+  },
+  {
+    icon: Smartphone,
+    title: "App Development",
+    slug: "app",
+    description:
+      "Custom mobile applications for iOS and Android, designed for performance, scalability, and seamless user experience.",
+    features: [
+      "React Native",
+      "Flutter Apps",
+      "Native iOS & Android",
+      "App Performance Optimization",
+    ],
+  },
+  {
+    icon: Brain,
+    title: "AI Solutions",
+    slug: "ai",
+    description:
+      "AI-powered solutions that help businesses automate workflows, analyze data, and make smarter decisions.",
+    features: [
+      "Machine Learning Models",
+      "Natural Language Processing",
+      "Computer Vision",
+      "AI System Integration",
+    ],
+  },
+  {
+    icon: Gamepad2,
+    title: "Game Development",
+    slug: "game",
+    description:
+      "High-quality 2D and 3D game development for mobile and desktop platforms using modern game engines.",
+    features: [
+      "Unity Game Development",
+      "Unreal Engine",
+      "Mobile Games",
+      "3D Interactive Experiences",
+    ],
+  },
+]
+
 
   return (
     <section className="py-16 bg-background">
@@ -45,11 +66,12 @@ export default function HomeServicesSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Our Services
+            Software Development Services
           </h2>
-          <p className="text-lg text-foreground/80">
-            Discover our range of professional services designed to help your business thrive.
+          <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
+            End-to-end software development services designed to help businesses in the US and UK build, scale, and succeed.
           </p>
+
         </div>
 
         {/* Services Grid */}
@@ -69,7 +91,7 @@ export default function HomeServicesSection() {
                       </h3>
                     </div>
                   </div>
-                  <p className="text-foreground/80 mb-6">{service.description}</p>
+                  <p className="text-foreground/80 mb-6 leading-relaxed">{service.description}</p>
                   <div className="space-y-2">
                     <p className="text-sm font-semibold text-secondary">Key Features:</p>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">

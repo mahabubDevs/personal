@@ -3,12 +3,14 @@
 import Link from "next/link"
 import { Clock, User, ArrowRight } from "lucide-react"
 import Image from "next/image"
+
 export default function HomeBlogSection() {
   const articles = [
     {
       id: 1,
       title: "The Future of AI in Web Development",
-      excerpt: "Exploring how artificial intelligence is revolutionizing the way we build web applications.",
+      excerpt:
+        "Discover how AI is transforming web development with automation, intelligent coding, and smarter user experiences.",
       author: "Alex Chen",
       date: "Nov 15, 2024",
       readTime: "8 min",
@@ -17,8 +19,9 @@ export default function HomeBlogSection() {
     },
     {
       id: 2,
-      title: "Mobile-First Design: Best Practices for 2024",
-      excerpt: "A comprehensive guide to designing mobile-first applications that work seamlessly across devices.",
+      title: "Mobile-First Design Best Practices 2024",
+      excerpt:
+        "Learn how to create responsive, mobile-first applications that boost usability, engagement, and conversions.",
       author: "Marcus Rodriguez",
       date: "Nov 12, 2024",
       readTime: "6 min",
@@ -28,17 +31,19 @@ export default function HomeBlogSection() {
     {
       id: 3,
       title: "Building Scalable Backend Systems",
-      excerpt: "Deep dive into architecture patterns and best practices for building scalable backend systems.",
+      excerpt:
+        "Master architecture patterns, cloud solutions, and best practices to build highly scalable backend systems.",
       author: "Elena Petrov",
       date: "Nov 8, 2024",
       readTime: "12 min",
-      category: "Backend",
+      category: "Backend Development",
       image: "/backend-architecture.jpg",
     },
     {
       id: 4,
-      title: "Intro to Machine Learning for Developers",
-      excerpt: "A beginner-friendly introduction to machine learning concepts and practical implementation.",
+      title: "Machine Learning for Developers: A Beginner's Guide",
+      excerpt:
+        "Get started with machine learning concepts, frameworks, and practical examples for real-world applications.",
       author: "Sarah Johnson",
       date: "Nov 1, 2024",
       readTime: "10 min",
@@ -60,9 +65,11 @@ export default function HomeBlogSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Latest Blog Posts
+            Latest Insights & Tutorials
           </h2>
-          <p className="text-foreground/80 text-lg">Stay updated with our latest insights and tutorials.</p>
+          <p className="text-foreground/80 text-lg max-w-2xl mx-auto">
+            Stay ahead in web, mobile, and AI technology with our expert guides, trends, and practical tutorials.
+          </p>
         </div>
 
         {/* Blog Cards */}
@@ -72,12 +79,13 @@ export default function HomeBlogSection() {
               key={article.id}
               className="group rounded-lg overflow-hidden bg-card/60 border border-border hover:border-secondary transition-all hover:shadow-[0_0_40px_rgba(0,191,255,0.2)] backdrop-blur-sm"
             >
-                 <div className="h-48 relative overflow-hidden">
+              <div className="h-48 relative overflow-hidden">
                 <Image
                   src={article.image}
-                  alt={article.title}
+                  alt={`${article.title} thumbnail for blog article`}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
+                  priority={article.id === 1}
                 />
               </div>
 
@@ -109,6 +117,7 @@ export default function HomeBlogSection() {
                 <Link
                   href={`/blog/${article.id}`}
                   className="inline-flex items-center gap-2 text-secondary hover:text-accent font-semibold transition-colors"
+                  aria-label={`Read full article: ${article.title}`}
                 >
                   Read Article <ArrowRight size={16} />
                 </Link>
@@ -122,6 +131,7 @@ export default function HomeBlogSection() {
           <Link
             href="/blog"
             className="inline-block px-8 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full font-semibold hover:shadow-[0_0_40px_rgba(138,43,226,0.7)] transition-all"
+            aria-label="See all blog articles"
           >
             See More
           </Link>
