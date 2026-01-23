@@ -5,47 +5,73 @@ import Link from "next/link"
 
 export default function Services() {
   const services = [
-    {
-      icon: Code2,
-      title: "Web Development",
-      slug: "web",
-      description:
-        "Modern, scalable web applications built with cutting-edge technologies. From responsive designs to complex backend systems.",
-      features: ["React/Next.js", "Full-Stack Development", "Progressive Web Apps", "E-Commerce Solutions"],
-    },
-    {
-      icon: Smartphone,
-      title: "App Development",
-      slug: "app",
-      description:
-        "Native and cross-platform mobile applications that deliver exceptional user experiences across iOS and Android.",
-      features: ["React Native", "Flutter", "Native Development", "App Optimization"],
-    },
-    {
-      icon: Gamepad2,
-      title: "Game Development",
-      slug: "game",
-      description:
-        "Engaging games and interactive experiences built with industry-standard engines and development practices.",
-      features: ["Unity Development", "Unreal Engine", "Mobile Games", "VR/AR Experiences"],
-    },
-    {
-      icon: Brain,
-      title: "AI Solutions",
-      slug: "ai",
-      description:
-        "Intelligent systems that leverage machine learning and artificial intelligence to solve complex business problems.",
-      features: ["Machine Learning Models", "NLP Solutions", "Computer Vision", "AI Integration"],
-    },
-    {
-      icon: Zap,
-      title: "Digital Marketing",
-      slug: "marketing",
-      description:
-        "Strategic digital marketing services to boost your online presence and drive measurable business growth.",
-      features: ["SEO Optimization", "Content Marketing", "Social Media Strategy", "Analytics & Reporting"],
-    },
-  ]
+  {
+    icon: Code2,
+    title: "Web Development",
+    slug: "web",
+    description:
+      "Secure, scalable, and high-performance web applications built for startups and growing businesses. From modern UI to robust backend systems.",
+    features: [
+      "React & Next.js",
+      "Full-Stack Development",
+      "Scalable Architecture",
+      "E-Commerce Solutions",
+    ],
+  },
+  {
+    icon: Smartphone,
+    title: "App Development",
+    slug: "app",
+    description:
+      "Custom mobile applications for iOS and Android, designed for performance, scalability, and seamless user experience.",
+    features: [
+      "React Native",
+      "Flutter Apps",
+      "Native iOS & Android",
+      "App Performance Optimization",
+    ],
+  },
+  {
+    icon: Gamepad2,
+    title: "Game Development",
+    slug: "game",
+    description:
+      "High-quality 2D and 3D game development for mobile and desktop platforms using modern game engines.",
+    features: [
+      "Unity Game Development",
+      "Unreal Engine",
+      "Mobile Games",
+      "3D Interactive Experiences",
+    ],
+  },
+  {
+    icon: Brain,
+    title: "AI Solutions",
+    slug: "ai",
+    description:
+      "AI-powered solutions that help businesses automate processes, analyze data, and make smarter decisions.",
+    features: [
+      "Machine Learning Models",
+      "NLP Solutions",
+      "Computer Vision",
+      "AI System Integration",
+    ],
+  },
+  {
+    icon: Zap,
+    title: "Digital Marketing",
+    slug: "marketing",
+    description:
+      "Result-driven digital marketing strategies to increase visibility, generate leads, and grow your business online.",
+    features: [
+      "SEO Optimization",
+      "Content Marketing",
+      "Social Media Strategy",
+      "Analytics & Reporting",
+    ],
+  },
+]
+
 
   return (
     <main className="min-h-screen pt-24 pb-12">

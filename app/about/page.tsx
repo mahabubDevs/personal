@@ -7,64 +7,72 @@ export default function About() {
       year: "2020",
       title: "Founded MrBitX",
       description:
-        "Started with a vision to revolutionize digital innovation with a small team of passionate developers.",
+        "MrBitX was founded with a clear mission to deliver secure, scalable, and high-quality software solutions for modern businesses.",
     },
     {
       year: "2021",
-      title: "First Major Project",
+      title: "First Enterprise Project",
       description:
-        "Delivered cutting-edge web platform for Fortune 500 client, establishing our reputation in the market.",
+        "Successfully delivered a high-performance web platform, proving our expertise in building enterprise-grade applications.",
     },
     {
       year: "2022",
-      title: "AI Division Launch",
-      description: "Expanded into AI and machine learning solutions, bringing intelligent automation to our clients.",
+      title: "AI & Machine Learning Division",
+      description:
+        "Launched our AI division to help businesses automate workflows, analyze data, and make smarter decisions.",
     },
     {
       year: "2023",
-      title: "Global Expansion",
-      description: "Opened offices in 3 new countries, growing our team to over 50 talented professionals.",
+      title: "Global Client Expansion",
+      description:
+        "Expanded our global reach by working with international clients across multiple industries and time zones.",
     },
     {
       year: "2024",
       title: "Industry Recognition",
-      description: "Received 5 major tech industry awards for innovation and excellence in digital solutions.",
+      description:
+        "Recognized for innovation, performance, and engineering excellence in web, mobile, and AI-driven solutions.",
     },
     {
       year: "2025",
-      title: "Next Generation",
-      description: "Launching revolutionary 3D web technologies and AI-powered development tools for the future.",
+      title: "Next-Generation Technology",
+      description:
+        "Adopted modern architectures, cloud-native systems, and AI-assisted development to future-proof client products.",
+    },
+    {
+      year: "2026",
+      title: "Future-Ready Digital Solutions",
+      description:
+        "Focused on building long-term, future-ready digital products using AI, scalable systems, and next-generation web technologies.",
     },
   ]
 
-
   const team = [
-  {
-    name: "Md Mahabub Rahman",
-    role: "CEO & Founder",
-    specialty: "Full-Stack Development",
-    image: "/team/mahabub.jpg",
-  },
-  {
-    name: "Sarah Johnson",
-    role: "CTO",
-    specialty: "Cloud Architecture",
-    image: "/team/sarah.jpg",
-  },
-  {
-    name: "Marcus Rodriguez",
-    role: "Lead Designer",
-    specialty: "UI/UX Design",
-    image: "/team/marcus.jpg",
-  },
-  {
-    name: "Elena Petrov",
-    role: "AI Lead",
-    specialty: "Machine Learning",
-    image: "/team/elena.jpg",
-  },
-]
-
+    {
+      name: "Md Mahabub Rahman",
+      role: "CEO & Founder",
+      specialty: "Full-Stack & Backend Engineering",
+      image: "/team/mahabub.jpg",
+    },
+    {
+      name: "Sarah Johnson",
+      role: "CTO",
+      specialty: "Cloud & System Architecture",
+      image: "/team/sarah.jpg",
+    },
+    {
+      name: "Marcus Rodriguez",
+      role: "Lead Designer",
+      specialty: "UI/UX & Product Design",
+      image: "/team/marcus.jpg",
+    },
+    {
+      name: "Elena Petrov",
+      role: "AI Lead",
+      specialty: "Machine Learning & Data Science",
+      image: "/team/elena.jpg",
+    },
+  ]
 
   return (
     <main className="min-h-screen pt-24 pb-12">
@@ -74,9 +82,9 @@ export default function About() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             About MrBitX
           </h1>
-          <p className="text-xl text-foreground/80">
-            We're a team of passionate developers, designers, and innovators dedicated to transforming businesses
-            through cutting-edge technology.
+          <p className="text-xl text-foreground/80 max-w-3xl">
+            MrBitX is a software development company specializing in scalable web applications, mobile solutions, and
+            AI-powered systems that help businesses grow, innovate, and succeed globally.
           </p>
         </div>
 
@@ -85,39 +93,43 @@ export default function About() {
           <div className="p-8 rounded-lg bg-card/50 border border-border neon-border hover:neon-border-blue transition-all">
             <h2 className="text-3xl font-bold mb-4 text-secondary">Our Vision</h2>
             <p className="text-foreground/80 leading-relaxed">
-              To empower businesses worldwide by delivering innovative digital solutions that bridge the gap between
-              technology and human potential, creating a future where technology works for everyone.
+              To become a trusted global technology partner by delivering innovative, secure, and future-ready digital
+              solutions that empower businesses worldwide.
             </p>
           </div>
 
           <div className="p-8 rounded-lg bg-card/50 border border-border neon-border hover:neon-border-blue transition-all">
             <h2 className="text-3xl font-bold mb-4 text-accent">Our Mission</h2>
             <p className="text-foreground/80 leading-relaxed">
-              To deliver exceptional digital solutions through innovation, expertise, and collaboration, helping our
-              clients achieve their goals and stay ahead in the rapidly evolving digital landscape.
+              Our mission is to build high-performance software solutions through deep technical expertise,
+              collaboration, and continuous innovation—helping clients stay competitive in a rapidly evolving digital
+              world.
             </p>
           </div>
         </div>
 
+        {/* Journey */}
         <div className="mb-16">
-          <h2 className="text-4xl font-bold mb-12 text-center text-foreground">Our Journey</h2>
+          <h2 className="text-4xl font-bold mb-12 text-center text-foreground">
+            Our Journey
+          </h2>
+
           <div className="relative">
-            {/* Timeline line */}
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary via-secondary to-accent"></div>
 
-            {/* Timeline events */}
             <div className="space-y-8 md:space-y-12">
               {timelineEvents.map((event, idx) => (
                 <div
                   key={idx}
                   className={`flex items-center gap-8 ${idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
                 >
-                  {/* Content */}
                   <div className="flex-1">
                     <div
                       className={`p-6 rounded-lg ${idx % 2 === 0 ? "md:text-right" : ""} bg-card/50 border border-border hover:border-secondary transition-all group`}
                     >
-                      <div className="text-lg font-bold text-secondary mb-2">{event.year}</div>
+                      <div className="text-lg font-bold text-secondary mb-2">
+                        {event.year}
+                      </div>
                       <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
                         {event.title}
                       </h3>
@@ -125,12 +137,10 @@ export default function About() {
                     </div>
                   </div>
 
-                  {/* Timeline dot */}
                   <div className="flex-shrink-0 hidden md:block">
                     <div className="w-4 h-4 rounded-full bg-gradient-to-r from-primary to-secondary ring-4 ring-card"></div>
                   </div>
 
-                  {/* Mobile timeline indicator */}
                   <div className="flex-shrink-0 md:hidden">
                     <div className="w-3 h-3 rounded-full bg-secondary"></div>
                   </div>
@@ -140,52 +150,63 @@ export default function About() {
           </div>
         </div>
 
-        {/* Team Section */}
-          <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
-              Meet Our Team
-            </h2>
+        {/* Team */}
+        <div className="mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
+            Meet Our Team
+          </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {team.map((member, idx) => (
-                <div
-                  key={idx}
-                  className="p-6 rounded-lg bg-gradient-to-br from-card to-card/50 border border-border hover:border-secondary transition-all group text-center"
-                >
-                  {/* Image */}
-                  <div className="relative w-20 h-20 mx-auto mb-4">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="rounded-full object-cover group-hover:scale-110 transition-transform"
-                    />
-                  </div>
-
-                  <h3 className="text-lg font-semibold mb-1">{member.name}</h3>
-                  <p className="text-secondary font-medium text-sm mb-2">
-                    {member.role}
-                  </p>
-                  <p className="text-foreground/60 text-sm">
-                    {member.specialty}
-                  </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {team.map((member, idx) => (
+              <div
+                key={idx}
+                className="p-6 rounded-lg bg-gradient-to-br from-card to-card/50 border border-border hover:border-secondary transition-all group text-center"
+              >
+                <div className="relative w-20 h-20 mx-auto mb-4">
+                  <Image
+                    src={member.image}
+                    alt={`${member.name} - ${member.role} at MrBitX`}
+                    fill
+                    className="rounded-full object-cover group-hover:scale-110 transition-transform"
+                  />
                 </div>
-              ))}
-            </div>
-          </div>
 
+                <h3 className="text-lg font-semibold mb-1">{member.name}</h3>
+                <p className="text-secondary font-medium text-sm mb-2">
+                  {member.role}
+                </p>
+                <p className="text-foreground/60 text-sm">
+                  {member.specialty}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Values */}
         <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg p-12 border border-border mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-foreground">Our Core Values</h2>
+          <h2 className="text-3xl font-bold mb-8 text-foreground">
+            Our Core Values
+          </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Innovation", desc: "Constantly pushing boundaries and exploring new technologies" },
-              { title: "Excellence", desc: "Delivering high-quality solutions that exceed expectations" },
-              { title: "Collaboration", desc: "Working closely with clients to achieve shared goals" },
+              {
+                title: "Innovation",
+                desc: "We continuously explore new technologies to deliver modern and future-ready digital solutions.",
+              },
+              {
+                title: "Excellence",
+                desc: "We focus on quality, performance, and long-term reliability in every project we build.",
+              },
+              {
+                title: "Collaboration",
+                desc: "We work closely with our clients as long-term partners to achieve meaningful results.",
+              },
             ].map((value, idx) => (
               <div key={idx}>
-                <h3 className="text-xl font-bold text-secondary mb-3">{value.title}</h3>
+                <h3 className="text-xl font-bold text-secondary mb-3">
+                  {value.title}
+                </h3>
                 <p className="text-foreground/70">{value.desc}</p>
               </div>
             ))}

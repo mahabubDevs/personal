@@ -5,67 +5,74 @@ import Link from "next/link"
 
 export default function Careers() {
   const jobs = [
-    {
-      id: 1,
-      title: "Senior Full-Stack Developer",
-      department: "Engineering",
-      location: "San Francisco, CA",
-      type: "Full-time",
-      salary: "$150k - $200k",
-      description: "Join our team to build scalable web applications using cutting-edge technologies.",
-      skills: ["React", "Node.js", "TypeScript", "PostgreSQL", "AWS"],
-    },
-    {
-      id: 2,
-      title: "AI/ML Engineer",
-      department: "AI Research",
-      location: "Remote",
-      type: "Full-time",
-      salary: "$160k - $220k",
-      description: "Build intelligent systems and machine learning models that solve real-world problems.",
-      skills: ["Python", "TensorFlow", "PyTorch", "Machine Learning", "MLOps"],
-    },
-    {
-      id: 3,
-      title: "Mobile App Developer",
-      department: "Mobile",
-      location: "New York, NY",
-      type: "Full-time",
-      salary: "$120k - $160k",
-      description: "Develop high-performance mobile applications for iOS and Android platforms.",
-      skills: ["React Native", "Swift", "Kotlin", "Firebase", "Mobile UX"],
-    },
-    {
-      id: 4,
-      title: "UI/UX Designer",
-      department: "Design",
-      location: "Remote",
-      type: "Full-time",
-      salary: "$100k - $140k",
-      description: "Create beautiful and intuitive user interfaces for our digital products.",
-      skills: ["Figma", "UI Design", "User Research", "Prototyping", "Design Systems"],
-    },
-    {
-      id: 5,
-      title: "DevOps Engineer",
-      department: "Infrastructure",
-      location: "Seattle, WA",
-      type: "Full-time",
-      salary: "$130k - $180k",
-      description: "Build and maintain scalable infrastructure and deployment pipelines.",
-      skills: ["Kubernetes", "Docker", "AWS", "CI/CD", "Infrastructure as Code"],
-    },
-    {
-      id: 6,
-      title: "QA Automation Engineer",
-      department: "Quality Assurance",
-      location: "Remote",
-      type: "Full-time",
-      salary: "$90k - $130k",
-      description: "Ensure quality and reliability of our products through comprehensive testing.",
-      skills: ["Selenium", "Python", "Testing Frameworks", "CI/CD", "Test Automation"],
-    },
-  ]
+  {
+    id: 1,
+    title: "Mid-Level Full-Stack Developer",
+    department: "Engineering",
+    location: "Dhaka, Bangladesh / Remote",
+    type: "Full-time",
+    salary: "$1,200 – $2,000 / month",
+    description:
+      "Build and maintain scalable web applications using modern full-stack technologies. Work closely with designers and backend engineers to deliver high-quality digital products.",
+    skills: ["React", "Next.js", "Node.js", "TypeScript", "MongoDB"],
+  },
+  {
+    id: 2,
+    title: "Backend Developer (Node.js)",
+    department: "Engineering",
+    location: "Dhaka, Bangladesh / Remote",
+    type: "Full-time",
+    salary: "$1,300 – $2,100 / month",
+    description:
+      "Develop secure and high-performance backend systems, REST APIs, and database architectures for scalable web applications.",
+    skills: ["Node.js", "Express.js", "TypeScript", "MongoDB", "REST API"],
+  },
+  {
+    id: 3,
+    title: "AI / Machine Learning Engineer",
+    department: "AI & Data",
+    location: "Remote",
+    type: "Full-time",
+    salary: "$1,500 – $2,500 / month",
+    description:
+      "Create intelligent AI-driven solutions, machine learning models, and automation systems that help businesses make data-driven decisions.",
+    skills: ["Python", "Machine Learning", "TensorFlow", "PyTorch", "Data Analysis"],
+  },
+  {
+    id: 4,
+    title: "Frontend Developer (React / Next.js)",
+    department: "Frontend",
+    location: "Dhaka, Bangladesh / Remote",
+    type: "Full-time",
+    salary: "$1,100 – $1,800 / month",
+    description:
+      "Build responsive, SEO-friendly user interfaces using modern frontend frameworks with a strong focus on performance and user experience.",
+    skills: ["React", "Next.js", "Tailwind CSS", "JavaScript", "UI Optimization"],
+  },
+  {
+    id: 5,
+    title: "UI / UX Designer",
+    department: "Design",
+    location: "Dhaka, Bangladesh / Remote",
+    type: "Full-time",
+    salary: "$900 – $1,500 / month",
+    description:
+      "Design intuitive and visually engaging user experiences for web and mobile applications, collaborating closely with developers and product teams.",
+    skills: ["Figma", "UI Design", "UX Research", "Prototyping", "Design Systems"],
+  },
+  {
+    id: 6,
+    title: "DevOps Engineer",
+    department: "Infrastructure",
+    location: "Remote",
+    type: "Full-time",
+    salary: "$1,400 – $2,300 / month",
+    description:
+      "Manage cloud infrastructure, CI/CD pipelines, and deployment automation to ensure high availability, security, and scalability of applications.",
+    skills: ["AWS", "Docker", "CI/CD", "Linux", "Cloud Infrastructure"],
+  },
+]
+
 
   return (
     <main className="min-h-screen pt-24 pb-12">
