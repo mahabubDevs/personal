@@ -51,27 +51,27 @@ export default function About() {
     {
       name: "Md Mahabub Rahman",
       role: "CEO & Founder",
-      specialty: "Full-Stack & Backend Engineering",
+      specialty: "Software Architect & Full-Stack Developer",
       image: "/team/mahabub.jpg",
     },
     {
-      name: "Sarah Johnson",
+      name: "Habibur Rahman Shanto ",
       role: "CTO",
-      specialty: "Cloud & System Architecture",
-      image: "/team/sarah.jpg",
+      specialty: "Cloud Solutions & DevOps Engineer",
+      image: "/team/shanto.jpg",
     },
-    {
-      name: "Marcus Rodriguez",
-      role: "Lead Designer",
-      specialty: "UI/UX & Product Design",
-      image: "/team/marcus.jpg",
-    },
-    {
-      name: "Elena Petrov",
-      role: "AI Lead",
-      specialty: "Machine Learning & Data Science",
-      image: "/team/elena.jpg",
-    },
+    // {
+    //   name: "Marcus Rodriguez",
+    //   role: "Lead Designer",
+    //   specialty: "UI/UX & Product Design",
+    //   image: "/team/marcus.jpg",
+    // },
+    // {
+    //   name: "Elena Petrov",
+    //   role: "AI Lead",
+    //   specialty: "Machine Learning & Data Science",
+    //   image: "/team/elena.jpg",
+    // },
   ]
 
   return (

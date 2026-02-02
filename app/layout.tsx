@@ -10,9 +10,10 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "MrBitX - Building the Future with Smart Digital Solutions",
+  title: "MrBitX - Custom Software Development & AI Solutions",
   description:
-    "Modern software solutions with AI, web development, app development, game development, and digital marketing services.",
+  "MrBitX provides scalable and secure web, backend, API, SaaS, cloud, and AI-powered software development solutions for modern businesses.",
+
   generator: "v0.app",
   icons: {
     icon: [
