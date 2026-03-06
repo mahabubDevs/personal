@@ -52,7 +52,7 @@ export default function About() {
       name: "A B M Shawon Islam",
       role: "CEO",
       specialty: "Software Architect & Full-Stack Developer",
-      image: "/team/shawon.png",
+      image: "/team/Shawon.png",
     },
     {
       name: "Habibur Rahman Shanto ",
@@ -64,7 +64,7 @@ export default function About() {
       name: "Azmir Uddin Alif ",
       role: "Sr.Mern Stack Developer",
       specialty: "Full-Stack Developer",
-      image: "/team/Azmir.png",
+      image: "/team/azmir.png",
     },
     // {
     //   name: "Marcus Rodriguez",
