@@ -49,10 +49,10 @@ export default function About() {
 
   const team = [
     {
-      name: "Md Mahabub Rahman",
-      role: "CEO & Founder",
+      name: "A B M Shawon Islam",
+      role: "CEO",
       specialty: "Software Architect & Full-Stack Developer",
-      image: "/team/mahabub.jpg",
+      image: "/team/shawon.webp",
     },
     {
       name: "Habibur Rahman Shanto ",
