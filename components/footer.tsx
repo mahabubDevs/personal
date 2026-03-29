@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { Mail, Phone, Linkedin, Twitter, Github } from "lucide-react"
 
@@ -5,15 +7,17 @@ export function Footer() {
   return (
     <footer className="bg-gradient-to-b from-background to-card/50 border-t border-border">
       <div className="max-w-7xl mx-auto px-4 py-16">
+        
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          
           {/* About */}
           <div>
             <h3 className="text-lg font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4">
               MrBitX
             </h3>
             <p className="text-foreground/60 text-sm leading-relaxed">
-              A next-generation software company specializing in digital innovation, 3D experiences, and AI-powered
-              solutions.
+              A next-generation software company specializing in digital innovation, 
+              scalable web platforms, and AI-powered solutions.
             </p>
           </div>
 
@@ -30,7 +34,10 @@ export function Footer() {
                 { label: "Contact", href: "/contact" },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-foreground/60 hover:text-secondary transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-sm text-foreground/60 hover:text-secondary transition-colors"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -50,7 +57,10 @@ export function Footer() {
                 { label: "Digital Marketing", href: "/services/marketing" },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-foreground/60 hover:text-secondary transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-sm text-foreground/60 hover:text-secondary transition-colors"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -62,18 +72,21 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Contact</h4>
             <div className="space-y-3">
+              
               <a
-                href="mailto:hello@mrbitx.com"
+                href="mailto:info@mrbitx.com"
                 className="flex items-center gap-2 text-sm text-foreground/60 hover:text-secondary transition-colors"
               >
                 <Mail size={16} /> info@mrbitx.com
               </a>
+
               <a
-                href="tel:+1234567890"
+                href="tel:+8801346810082"
                 className="flex items-center gap-2 text-sm text-foreground/60 hover:text-secondary transition-colors"
               >
                 <Phone size={16} /> +880 1346 810 082
               </a>
+
               <div className="flex gap-3 pt-2">
                 <a href="#" className="text-secondary hover:text-accent transition-colors">
                   <Linkedin size={18} />
@@ -85,15 +98,30 @@ export function Footer() {
                   <Github size={18} />
                 </a>
               </div>
+
             </div>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-border pt-8">
-          <p className="text-center text-sm text-foreground/40">
+        {/* Bottom Section */}
+        <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          
+          {/* Copyright */}
+          <p className="text-sm text-foreground/40 text-center md:text-left">
             © {new Date().getFullYear()} MrBitX. All Rights Reserved.
           </p>
+
+          {/* Legal Links */}
+          <div className="flex items-center gap-4 text-sm text-foreground/60">
+            <Link href="/termsandcondaton" className="hover:text-secondary transition">
+              Terms & Conditions
+            </Link>
+            <span className="text-foreground/30">•</span>
+            <Link href="/privacypolicy" className="hover:text-secondary transition">
+              Privacy Policy
+            </Link>
+          </div>
+
         </div>
 
       </div>

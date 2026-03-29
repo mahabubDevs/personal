@@ -11,81 +11,109 @@ import HomeServicesSection from "@/components/HomeServiceComponent"
 import HomePortfolioSection from "@/components/HomePortfolioComponent"
 import HomeAboutPreview from "@/components/HomeAboutCompoent"
 import HomePortfolioPreview from "@/components/HomePortfolioComponent"
+import HomeWhoWeHelp from "@/components/HomeWhoWeHelp"
+import HomeStats from "@/components/HomeStats"
+import HomeProcess from "@/components/HomeProcess"
+import HomeCTA from "@/components/HomeCTA"
 
 export default function Home() {
   return (
     <main className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
-          <div
-            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "1s" }}
-          ></div>
-          <div
-            className="absolute top-1/2 left-1/2 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "2s" }}
-          ></div>
-        </div>
+      <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-gray-900">
+  {/* Subtle Background Gradients */}
+  <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute top-16 left-16 w-80 h-80 bg-primary/20 rounded-full blur-3xl animate-slow-pulse"></div>
+    <div className="absolute bottom-20 right-16 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-slow-pulse delay-500"></div>
+    <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-slow-pulse delay-1000"></div>
+  </div>
 
-        {/* Content */}
-        <div className="relative z-10 text-center max-w-[1100px] mx-auto px-4">
-          <div className="mb-8 inline-block">
-            <div className="px-4 py-2 rounded-full border border-secondary/50 text-secondary text-sm font-medium">
-               Trusted Software Development Partner for US & UK Businesses
-            </div>
+  <div className="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+    {/* LEFT SIDE - Clear, readable text */}
+    <div className="space-y-6 md:space-y-8 text-center md:text-left">
+      {/* Badge */}
+      <div className="inline-block px-4 py-2 rounded-full border border-secondary/40 text-secondary text-sm backdrop-blur-sm bg-white/5 font-medium">
+         Trusted by startups in US, UK & Australia
+      </div>
+
+      {/* Headline */}
+      <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight text-white">
+        <span className="block">
+          We build{" "}
+          <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+            scalable SaaS & web platforms
+          </span>
+        </span>
+        <span className="block mt-2 text-white/80">
+          that grow your business
+        </span>
+      </h1>
+
+      {/* Subtext */}
+      <p className="text-lg md:text-xl text-white/70 max-w-md mx-auto md:mx-0">
+        Launch your MVP in 2–4 weeks using MERN, AI & modern tech. Optimized for speed, scalability, and maximum growth.
+      </p>
+
+      {/* CTA Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-4">
+        <Link
+          href="/contact"
+          className="px-8 py-4 rounded-full bg-gradient-to-r from-primary to-accent text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
+        >
+          Book Free Consultation
+        </Link>
+        <Link
+          href="/services"
+          className="px-8 py-4 rounded-full border border-secondary text-secondary hover:bg-secondary/10 transition-colors"
+        >
+          Explore Services →
+        </Link>
+      </div>
+    </div>
+
+    {/* RIGHT SIDE - Visual */}
+    <div className="relative flex justify-center md:justify-end items-center">
+      {/* Glass Card Stats */}
+      <div className="relative p-6 md:p-8 rounded-3xl border border-white/10 backdrop-blur-xl bg-white/5 shadow-[0_0_60px_rgba(0,0,0,0.3)] max-w-sm w-full space-y-4">
+        <div className="grid grid-cols-2 gap-4">
+          <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-center">
+            <h3 className="text-2xl font-bold text-primary">50+</h3>
+            <p className="text-sm text-white/70">Projects Delivered</p>
           </div>
-
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-float">
-            <span className="block">
-              Custom Software Development
-            </span>
-            <span className="block mt-2">
-              & 
-            </span>
-            <span className="block">
-              AI Solutions
-            </span>
-
-            
-          </h1>
-
-
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-           Secure, scalable, and high-performance digital products for modern businesses.
-
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link
-              href="/contact"
-              className="px-8 py-4 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full font-semibold hover:shadow-[0_0_40px_rgba(138,43,226,0.7)] transition-all transform hover:scale-105"
-            >
-              Get Started
-            </Link>
-            <Link
-              href="/services"
-              className="px-8 py-4 border-2 border-secondary text-secondary rounded-full font-semibold hover:bg-secondary/10 transition-all"
-            >
-              Explore Services
-            </Link>
+          <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-center">
+            <h3 className="text-2xl font-bold text-secondary">2–4 Weeks</h3>
+            <p className="text-sm text-white/70">MVP Delivery</p>
+          </div>
+          <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-center">
+            <h3 className="text-2xl font-bold text-accent">99%</h3>
+            <p className="text-sm text-white/70">Client Satisfaction</p>
+          </div>
+          <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-center">
+            <h3 className="text-2xl font-bold text-primary">24/7</h3>
+            <p className="text-sm text-white/70">Support</p>
           </div>
         </div>
+      </div>
 
-        {/* 3D Hero Component */}
-        <Hero3D />
-      </section>
+      {/* Optional 3D Hero */}
+      <div className="absolute inset-0 -z-10">
+        {/* <Hero3D /> */}
+      </div>
+    </div>
+  </div>
+</section>
 
      
 
-
+        <HomeWhoWeHelp />
+        <HomeStats />
         <HomeServicesSection />
         <HomePortfolioPreview />
-        <HomeBlogSection />
+        <HomeProcess />
+        {/* <HomeBlogSection /> */}
         <HomeAboutPreview />
+        <HomeCTA />
        {/* <Portfolio /> */}
       {/* <Blog /> */}
       {/* <About /> */}

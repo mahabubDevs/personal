@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import { ExternalLink, Github } from "lucide-react"
 import Image from "next/image"
 
 export default function HomePortfolioPreview() {
@@ -13,6 +12,7 @@ export default function HomePortfolioPreview() {
         "AI-powered e-commerce platform with real-time inventory, secure checkout, and scalable architecture for online businesses.",
       technologies: ["Next.js", "TypeScript", "PostgreSQL", "Stripe"],
       image: "/e-commerce-platform.png",
+      featured: true,
     },
     {
       title: "Mobile Fitness App",
@@ -32,84 +32,129 @@ export default function HomePortfolioPreview() {
     },
   ]
 
+  const featured = projects.find((p) => p.featured)
+  const others = projects.filter((p) => !p.featured)
+
   return (
-    <section className="relative py-20 overflow-hidden">
-      {/* 🔵 Animated Blobs Background */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-blob"></div>
-        <div className="absolute top-1/2 right-1/3 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-1/4 left-1/2 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
+    <section className="relative py-24 overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-primary/10 blur-3xl rounded-full -translate-x-1/2 -translate-y-1/2"></div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Featured Projects
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Featured{" "}
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Projects
+            </span>
           </h2>
-          <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            Explore our innovative software solutions built for web, mobile, and AI-driven applications.
+          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+            Real products we’ve built to help businesses scale faster.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
-          {projects.map((project, idx) => (
-            <div
-              key={idx}
-              className="group rounded-lg overflow-hidden bg-card/60 border border-border hover:border-secondary transition-all hover:shadow-[0_0_40px_rgba(0,191,255,0.2)] backdrop-blur-sm"
-            >
-              <div className="h-48 relative overflow-hidden">
+        {/* 🔥 Featured Project (Hero Style) */}
+        {featured && (
+          <div className="mb-12 group">
+            <div className="grid md:grid-cols-2 gap-8 items-center rounded-2xl border border-border bg-card/60 backdrop-blur-xl overflow-hidden hover:shadow-[0_0_60px_rgba(0,191,255,0.25)] transition-all">
+              
+              {/* Image */}
+              <div className="relative h-72 md:h-full overflow-hidden">
                 <Image
-                  src={project.image}
-                  alt={`${project.title} screenshot`}
+                  src={featured.image}
+                  alt={featured.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-300"
-                  priority={idx === 0}
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
-              <div className="p-6">
-                <div className="mb-3">
-                  <span className="text-xs font-semibold text-secondary bg-secondary/10 px-3 py-1 rounded-full">
-                    {project.category}
-                  </span>
-                </div>
+              {/* Content */}
+              <div className="p-8">
+                <span className="text-xs font-semibold text-secondary bg-secondary/10 px-3 py-1 rounded-full">
+                  {featured.category}
+                </span>
 
-                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-secondary transition-colors">
-                  {project.title}
+                <h3 className="text-2xl md:text-3xl font-bold mt-4 mb-3 group-hover:text-secondary transition">
+                  {featured.title}
                 </h3>
-                <p className="text-foreground/70 text-sm mb-4">{project.description}</p>
+
+                <p className="text-foreground/70 mb-5">
+                  {featured.description}
+                </p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, i) => (
+                  {featured.technologies.map((tech, i) => (
                     <span
                       key={i}
-                      className="text-xs px-2 py-1 bg-muted/40 text-muted-foreground rounded"
+                      className="text-xs px-3 py-1 bg-muted/40 rounded-full text-muted-foreground"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* <div className="flex gap-3">
-                  <Link
-                    href={`/projects/${project.title.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="flex-1 px-4 py-2 bg-primary/20 hover:bg-primary/30 text-secondary rounded font-medium transition-colors flex items-center justify-center gap-2"
-                  >
-                    <ExternalLink size={16} /> View Project Details
-                  </Link>
-                  <Link
-                    href="#"
-                    className="flex-1 px-4 py-2 border border-border hover:border-secondary rounded font-medium transition-colors flex items-center justify-center gap-2"
-                  >
-                    <Github size={16} /> View Source Code
-                  </Link>
-                </div> */}
+                <Link
+                  href="/case"
+                  className="inline-block px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full text-sm font-medium hover:opacity-90 transition"
+                >
+                  View Case Study →
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Other Projects */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {others.map((project, idx) => (
+            <div
+              key={idx}
+              className="group rounded-xl overflow-hidden border border-border bg-card/60 backdrop-blur-md hover:border-secondary hover:-translate-y-1 hover:shadow-xl transition-all"
+            >
+              {/* Image */}
+              <div className="h-52 relative overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <span className="text-xs font-semibold text-secondary bg-secondary/10 px-3 py-1 rounded-full">
+                  {project.category}
+                </span>
+
+                <h3 className="text-lg font-semibold mt-3 mb-2 group-hover:text-secondary transition">
+                  {project.title}
+                </h3>
+
+                <p className="text-sm text-foreground/70 mb-4 line-clamp-3">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="text-xs px-2 py-1 bg-muted/40 rounded text-muted-foreground"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12 relative z-10">
+        {/* CTA */}
+        <div className="text-center mt-14">
           <Link
             href="/portfolio"
             className="inline-block px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-full shadow-lg hover:opacity-90 transition-all"
