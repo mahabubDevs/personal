@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Mail, Phone, Linkedin, Twitter, Github } from "lucide-react"
+import { Mail, Phone, Linkedin, Twitter, Github, Facebook, Instagram } from "lucide-react"
 
 export function Footer() {
   return (
@@ -88,14 +88,14 @@ export function Footer() {
               </a>
 
               <div className="flex gap-3 pt-2">
-                <a href="#" className="text-secondary hover:text-accent transition-colors">
+                <a href="https://www.linkedin.com/company/mrbitx" className="text-secondary hover:text-accent transition-colors">
                   <Linkedin size={18} />
                 </a>
-                <a href="#" className="text-secondary hover:text-accent transition-colors">
-                  <Twitter size={18} />
+                <a href="https://www.facebook.com/mrbitx/" className="text-secondary hover:text-accent transition-colors">
+                  <Facebook size={18} />
                 </a>
-                <a href="#" className="text-secondary hover:text-accent transition-colors">
-                  <Github size={18} />
+                <a href="https://www.instagram.com/mrbitx0" className="text-secondary hover:text-accent transition-colors">
+                  <Instagram size={18} />
                 </a>
               </div>
 

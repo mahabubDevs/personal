@@ -18,7 +18,7 @@ import HomeCTA from "@/components/HomeCTA"
 
 export default function Home() {
   return (
-    <main className="min-h-screen pt-20">
+    <main className="min-h-screen pt-16">
       {/* Hero Section */}
       <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-gray-900">
   {/* Subtle Background Gradients */}
@@ -78,7 +78,7 @@ export default function Home() {
       <div className="relative p-6 md:p-8 rounded-3xl border border-white/10 backdrop-blur-xl bg-white/5 shadow-[0_0_60px_rgba(0,0,0,0.3)] max-w-sm w-full space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-center">
-            <h3 className="text-2xl font-bold text-primary">50+</h3>
+            <h3 className="text-2xl font-bold text-primary">20+</h3>
             <p className="text-sm text-white/70">Projects Delivered</p>
           </div>
           <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-center">
