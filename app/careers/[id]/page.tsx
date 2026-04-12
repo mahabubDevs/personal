@@ -12,10 +12,12 @@ const jobListings: Record<
   {
     id: number
     title: string
+    level: "Entry Level" | "Mid Level"
     department: string
     location: string
     type: string
     salary: string
+    hiringStatus: string
     description: string
     skills: string[]
     fullDescription: string
@@ -26,231 +28,165 @@ const jobListings: Record<
 > = {
   "1": {
     id: 1,
-    title: "Mid-Level Full-Stack Developer",
-    department: "Engineering",
-    location: "Dhaka, Bangladesh / Remote",
+    title: "UI / UX Designer",
+    level: "Entry Level",
+    department: "Design",
+    location: "Bangladesh Only (Remote / Dhaka)",
     type: "Full-time",
-    salary: "$1,200 – $2,000 / month",
-    description:
-      "Build scalable and high-performance web applications using modern full-stack technologies.",
-    skills: ["React", "Next.js", "Node.js", "TypeScript", "MongoDB"],
-    fullDescription:
-      "We are looking for a Mid-Level Full-Stack Developer to join our engineering team. You will work on real-world projects, building modern web applications with a strong focus on performance, scalability, and clean code.",
+    salary: "৳20,000 – ৳25,000 / month",
+    hiringStatus: "Hiring from April 2026",
+    description: "Entry-level designer to create modern UI/UX for web and mobile.",
+    skills: ["Figma", "Wireframing", "UI Design", "Prototyping"],
+    fullDescription: "Perfect role for beginners to grow in UI/UX design.",
     responsibilities: [
-      "Develop full-stack web applications using React, Next.js, and Node.js",
-      "Design and implement REST APIs",
-      "Write clean, maintainable, and scalable code",
-      "Collaborate with designers and backend engineers",
-      "Optimize application performance and security",
-      "Participate in code reviews and team discussions",
+      "Create wireframes",
+      "Design UI screens",
+      "Collaborate with dev team",
+      "Improve UX"
     ],
     qualifications: [
-      "2–4 years of professional full-stack development experience",
-      "Strong knowledge of JavaScript and TypeScript",
-      "Experience with React or Next.js",
-      "Basic understanding of backend architecture and databases",
-      "Familiarity with Git and Agile workflows",
-      "Good problem-solving skills",
+      "0–1 year experience",
+      "Basic Figma knowledge",
+      "Creative mindset",
+      "Bangladesh based"
     ],
-    benefits: [
-      "Competitive mid-range salary",
-      "Remote or Dhaka-based work flexibility",
-      "Friendly and collaborative work environment",
-      "Career growth opportunities",
-      "Flexible working hours",
-      "Paid leave and holidays",
-    ],
+    benefits: ["Remote", "Flexible hours", "Growth opportunity"]
   },
 
   "2": {
     id: 2,
-    title: "Backend Developer (Node.js)",
-    department: "Engineering",
-    location: "Dhaka, Bangladesh / Remote",
+    title: "Frontend Developer (React)",
+    level: "Entry Level",
+    department: "Frontend",
+    location: "Bangladesh Only (Remote / Dhaka)",
     type: "Full-time",
-    salary: "$1,300 – $2,100 / month",
-    description:
-      "Develop secure, scalable backend systems and APIs for modern web applications.",
-    skills: ["Node.js", "Express.js", "TypeScript", "MongoDB", "REST APIs"],
-    fullDescription:
-      "As a Backend Developer, you will focus on building reliable server-side applications, APIs, and database architectures that power our digital products.",
+    salary: "৳20,000 – ৳25,000 / month",
+    hiringStatus: "Hiring from April 2026",
+    description: "Junior frontend developer for modern UI development.",
+    skills: ["React", "JavaScript", "HTML", "CSS"],
+    fullDescription: "Work with modern frontend stack and grow fast.",
     responsibilities: [
-      "Develop backend services using Node.js and Express",
-      "Design RESTful APIs and database schemas",
-      "Ensure application security and data protection",
-      "Optimize server performance and scalability",
-      "Collaborate with frontend and DevOps teams",
-      "Maintain documentation and code quality",
+      "Build UI components",
+      "Fix bugs",
+      "Support senior devs",
+      "Write clean code"
     ],
     qualifications: [
-      "2–4 years of backend development experience",
-      "Strong knowledge of Node.js and Express",
-      "Experience with MongoDB or similar databases",
-      "Understanding of authentication and authorization",
-      "Familiarity with cloud environments",
-      "Strong debugging skills",
+      "0–1 year experience",
+      "Basic React knowledge",
+      "Problem solving",
+      "Bangladesh based"
     ],
-    benefits: [
-      "Mid-range competitive salary",
-      "Remote-friendly culture",
-      "Learning and growth opportunities",
-      "Flexible working hours",
-      "Supportive engineering team",
-      "Paid time off",
-    ],
+    benefits: ["Remote", "Learning support", "Flexible time"]
   },
 
   "3": {
     id: 3,
-    title: "AI / Machine Learning Engineer",
-    department: "AI & Data",
-    location: "Remote",
+    title: "App Developer (Flutter)",
+    level: "Entry Level",
+    department: "Mobile",
+    location: "Bangladesh Only (Remote / Dhaka)",
     type: "Full-time",
-    salary: "$1,500 – $2,500 / month",
-    description:
-      "Build intelligent AI and machine learning solutions for real-world business problems.",
-    skills: ["Python", "Machine Learning", "TensorFlow", "PyTorch", "Data Analysis"],
-    fullDescription:
-      "We are seeking an AI/ML Engineer to design and deploy intelligent systems that automate processes and generate insights using data-driven approaches.",
+    salary: "৳20,000 – ৳25,000 / month",
+    hiringStatus: "Hiring from April 2026",
+    description: "Entry-level mobile app developer (Flutter).",
+    skills: ["Flutter", "Dart", "Firebase"],
+    fullDescription: "Start your mobile dev career with real projects.",
     responsibilities: [
-      "Develop and train machine learning models",
-      "Analyze and preprocess large datasets",
-      "Deploy ML models into production systems",
-      "Optimize model performance and accuracy",
-      "Collaborate with engineering teams",
-      "Document models and workflows",
+      "Build mobile UI",
+      "Fix bugs",
+      "Integrate APIs",
+      "Assist senior devs"
     ],
     qualifications: [
-      "2–4 years of experience in AI or machine learning",
-      "Strong Python programming skills",
-      "Knowledge of ML frameworks",
-      "Understanding of data preprocessing techniques",
-      "Experience with model deployment is a plus",
-      "Strong analytical mindset",
+      "Basic Flutter knowledge",
+      "0–1 year experience",
+      "Willing to learn",
+      "Bangladesh based"
     ],
-    benefits: [
-      "Remote-first role",
-      "Competitive monthly salary",
-      "Opportunity to work on real AI products",
-      "Flexible schedule",
-      "Learning budget",
-      "Supportive team culture",
-    ],
+    benefits: ["Remote", "Mentorship", "Growth"]
   },
 
   "4": {
     id: 4,
-    title: "Frontend Developer (React / Next.js)",
-    department: "Frontend",
-    location: "Dhaka, Bangladesh / Remote",
+    title: "UI / UX Designer",
+    level: "Mid Level",
+    department: "Design",
+    location: "Bangladesh Only (Remote / Dhaka)",
     type: "Full-time",
-    salary: "$1,100 – $1,800 / month",
-    description:
-      "Build modern, SEO-friendly, and high-performance user interfaces.",
-    skills: ["React", "Next.js", "Tailwind CSS", "JavaScript", "UI Optimization"],
-    fullDescription:
-      "We are looking for a Frontend Developer to craft fast, responsive, and visually appealing user interfaces using modern frontend technologies.",
+    salary: "৳30,000 – ৳50,000 / month",
+    hiringStatus: "Hiring from April 2026",
+    description: "Mid-level designer for product-level UI/UX.",
+    skills: ["Figma", "UX Research", "Design System"],
+    fullDescription: "Work on real product design and improve UX.",
     responsibilities: [
-      "Develop UI components using React and Next.js",
-      "Ensure responsive and cross-browser compatibility",
-      "Optimize frontend performance and SEO",
-      "Collaborate with designers and backend developers",
-      "Maintain UI consistency and quality",
-      "Fix UI bugs and improve UX",
+      "Design full UI flows",
+      "User research",
+      "Improve UX",
+      "Team collaboration"
     ],
     qualifications: [
-      "2–4 years of frontend development experience",
-      "Strong React and JavaScript knowledge",
-      "Experience with Tailwind CSS or similar frameworks",
-      "Basic SEO and performance optimization knowledge",
-      "Attention to UI/UX details",
-      "Team collaboration skills",
+      "2–3 years experience",
+      "Strong portfolio",
+      "UX knowledge",
+      "Bangladesh based"
     ],
-    benefits: [
-      "Flexible work location",
-      "Competitive salary",
-      "Creative work environment",
-      "Growth opportunities",
-      "Paid leave",
-      "Modern tech stack",
-    ],
+    benefits: ["Remote", "Creative freedom", "Flexible hours"]
   },
 
   "5": {
     id: 5,
-    title: "UI / UX Designer",
-    department: "Design",
-    location: "Dhaka, Bangladesh / Remote",
+    title: "Frontend Developer (Next.js)",
+    level: "Mid Level",
+    department: "Frontend",
+    location: "Bangladesh Only (Remote / Dhaka)",
     type: "Full-time",
-    salary: "$900 – $1,500 / month",
-    description:
-      "Design intuitive and engaging user experiences for web and mobile products.",
-    skills: ["Figma", "UI Design", "UX Research", "Prototyping", "Design Systems"],
-    fullDescription:
-      "As a UI/UX Designer, you will create user-centered designs that balance aesthetics and usability across digital platforms.",
+    salary: "৳30,000 – ৳50,000 / month",
+    hiringStatus: "Hiring from April 2026",
+    description: "Mid-level frontend dev for scalable apps.",
+    skills: ["Next.js", "React", "TypeScript", "Tailwind"],
+    fullDescription: "Build scalable, SEO-friendly applications.",
     responsibilities: [
-      "Design UI for web and mobile applications",
-      "Create wireframes and prototypes",
-      "Conduct basic user research",
-      "Collaborate with developers and product teams",
-      "Maintain design consistency",
-      "Iterate designs based on feedback",
+      "Develop UI",
+      "Optimize performance",
+      "Collaborate team",
+      "Maintain code"
     ],
     qualifications: [
-      "2–3 years of UI/UX design experience",
-      "Strong Figma skills",
-      "Understanding of UX principles",
-      "Portfolio of design work",
-      "Good communication skills",
-      "Attention to detail",
+      "2–4 years experience",
+      "Strong React/Next.js",
+      "Teamwork",
+      "Bangladesh based"
     ],
-    benefits: [
-      "Remote or hybrid work",
-      "Creative freedom",
-      "Supportive team",
-      "Flexible hours",
-      "Paid holidays",
-      "Career growth",
-    ],
+    benefits: ["Remote", "Flexible time", "Career growth"]
   },
 
   "6": {
     id: 6,
-    title: "DevOps Engineer",
-    department: "Infrastructure",
-    location: "Remote",
+    title: "App Developer (React Native)",
+    level: "Mid Level",
+    department: "Mobile",
+    location: "Bangladesh Only (Remote / Dhaka)",
     type: "Full-time",
-    salary: "$1,400 – $2,300 / month",
-    description:
-      "Manage cloud infrastructure and deployment pipelines for scalable applications.",
-    skills: ["AWS", "Docker", "CI/CD", "Linux", "Cloud Infrastructure"],
-    fullDescription:
-      "We are seeking a DevOps Engineer to manage deployments, cloud infrastructure, and automation workflows to ensure system reliability and scalability.",
+    salary: "৳30,000 – ৳50,000 / month",
+    hiringStatus: "Hiring from April 2026",
+    description: "Mid-level mobile developer for production apps.",
+    skills: ["React Native", "API Integration", "Firebase"],
+    fullDescription: "Work on real-world mobile applications.",
     responsibilities: [
-      "Manage cloud infrastructure",
-      "Build and maintain CI/CD pipelines",
-      "Automate deployment processes",
-      "Monitor system performance",
-      "Ensure security best practices",
-      "Collaborate with engineering teams",
+      "Build mobile apps",
+      "Integrate APIs",
+      "Optimize performance",
+      "Debug issues"
     ],
     qualifications: [
-      "2–4 years of DevOps experience",
-      "Strong Linux and cloud knowledge",
-      "Experience with Docker and CI/CD",
-      "Basic scripting skills",
-      "Problem-solving mindset",
-      "Good communication skills",
+      "2–4 years experience",
+      "React Native knowledge",
+      "Problem solving",
+      "Bangladesh based"
     ],
-    benefits: [
-      "Fully remote role",
-      "Competitive salary",
-      "Flexible work hours",
-      "Learning opportunities",
-      "Supportive culture",
-      "Paid leave",
-    ],
-  },
+    benefits: ["Remote", "Flexible hours", "Growth"]
+  }
 }
 
 

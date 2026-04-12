@@ -97,7 +97,7 @@ export default function HomePortfolioPreview() {
                 </div>
 
                 <Link
-                  href="/case"
+                  href="/case/ecommerce-platform"
                   className="inline-block px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full text-sm font-medium hover:opacity-90 transition"
                 >
                   View Case Study →
